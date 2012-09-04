@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @theme.name %>
+</p>
+
+<div id = "assets">
+  <% @theme.assets.each do |asset| %>
+  <div class = "asset">
+    <%if asset.image.present? %>
+	    <a href = "<%= asset_path(asset)%>"> <%= image_tag asset.image_url(:thumb).to_s %></a>
+			<div class = "user_name"><%=asset.user_id %>'s classroom </div>
+			<div class = "user_name">(<%=asset.classroom.region.name %>) </div>
+    <%else%>
+	    <%= link_to image_tag("youtube.png", :width => "200"), asset_path(asset) %>
+    <%end%>
+    <div class = "actions">
+      <%= link_to "edit", edit_asset_path(asset) %> 
+      <%= link_to "remove", asset, :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+  </div>
+  <%end%>
+  <div class = "clear"></div>
+
+</div>
+
+<%= link_to 'Edit', edit_theme_path(@theme) %> |
+<%= link_to 'Back', themes_path %>

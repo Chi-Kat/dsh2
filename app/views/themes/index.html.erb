@@ -1,0 +1,14 @@
+<h1>Themes</h1>
+
+<ul>
+<% @themes.each do |theme| %>
+  <li><%= theme.name %>
+  <%= link_to 'Show', theme %>
+  <%= link_to 'Edit', edit_theme_path(theme) %>
+  <%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Theme', new_theme_path %>

@@ -1,0 +1,46 @@
+<%= form_for @asset, :html => {:multipart => true} do |f| %>
+  <% if @asset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@asset.errors.count, "error") %> prohibited this asset from being saved:</h2>
+
+      <ul>
+      <% @asset.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+    <%= f.label :theme_id %><br />
+    <%= f.collection_select :theme_id, Theme.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :classroom_id %><br />
+    <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
+  </div>
+   <div class="field">
+    <%= f.hidden_field :user_id, {:value => session[:user_id]} %>
+  </div>
+   <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :contributors %><br />
+    <%= f.text_field :contributors %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :youtube_url %><br />
+    <%= f.text_field :youtube_url %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit  'Add Video' %>
+  </div>
+<% end %>

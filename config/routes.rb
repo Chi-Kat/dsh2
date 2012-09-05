@@ -1,6 +1,6 @@
 Dsh2::Application.routes.draw do
 
-  root :to => 'assets#index', :as => :home
+  root :to => 'assets#index', :as => :root
 
   resources :users
 

@@ -5,6 +5,7 @@ require 'carrierwave/processing/mime_types'
 CarrierWave.configure do |config|
     config.fog_credentials = {
       :provider               => 'AWS',
+    }
 
   end
 

@@ -2,7 +2,7 @@ class AssetsController < ApplicationController
  
  before_filter :require_login, :except => [:index, :show]
  #before_filter :require_authorization, :except => [:index, :show, :new, :create]
- before_filter :require_auth_or_admin, :only => [:update, :edit, :destroy]
+ before_filter :require_auth_or_admin, :only => [:update, :edit, :destroy, :new]
 
   def current_user
     User.find_by_id(session["user_id"])

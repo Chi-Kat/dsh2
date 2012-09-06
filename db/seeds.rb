@@ -29,7 +29,7 @@ Classroom.destroy_all
 
 classrooms = [ 
               {:name => 'Meeting Point Kampala', :region_id => Region.find_by_name('Uganda').id},
-              {:name => 'Huay Puung Mai School', :region_id => Region.find_by_name('Thailand').id},
+              {:name => 'Huay Puung Mai', :region_id => Region.find_by_name('Thailand').id},
               {:name => 'Khe Sanh',              :region_id => Region.find_by_name('Vietnam').id},
               {:name => 'Project Cambodia',      :region_id => Region.find_by_name('Cambodia').id},
               {:name => 'Project Honduras',      :region_id => Region.find_by_name('Honduras').id}
@@ -41,7 +41,6 @@ classrooms.each do |classroom|
 end
 
 puts 'adding admin users'
-
 
 User.destroy_all
 
@@ -60,4 +59,19 @@ users.each do |user|
 				password_confirmation:  user[:password_confirmation]
 				puts "Created User #{user[:name]}"
 end
+
+Theme.delete_all
+
+themes = [
+          {:name => 'Classroom'},
+          {:name => 'Sports'},
+          {:name => 'Music'},
+          {:name => 'Food'}
+         ]
+        
+themes.each do |theme|     
+  Theme.create name: theme[:name]
+end
+
+puts 'added themes'
 

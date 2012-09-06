@@ -3,7 +3,24 @@ class Asset < ActiveRecord::Base
 
   belongs_to :classroom 
   belongs_to :theme
-  belongs_to :user 
+  belongs_to :user
+  
+
+  belongs_to :teacher, through: :classroom
+  
 
   mount_uploader :image, ImageUploader
+
+  # functions as 'belongs_to :region, :through => :classroom'
+  def region
+  	classroom.region
+  end
+
+  # def asset_filter
+  # 	self.where(:theme_id)
+
+  # 	Self.where(:theme_id => position,
+  #                :classroom_id => min_hourly)
+  # end
+
 end

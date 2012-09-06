@@ -10,9 +10,6 @@
 
 	<nav>
 
-		<% def current_user %>
-		<% User.find_by_id(session["user_id"]) %>
-		<% end %>
 
 		<%= link_to "Logo", home_url %>
 		<%= link_to "About Us", about_url %>
@@ -22,7 +19,7 @@
 				Hello <%= current_user.name %>
 						<%if current_user.role == "Admin"%>
 						<%= link_to "Admin Panel", admin_url %>
-					<%end%>
+				<%end%>
 					<%if current_user.role == "Teacher"%>
 						<%= link_to "Teacher Panel", teacher_url %>
 					<% end %>

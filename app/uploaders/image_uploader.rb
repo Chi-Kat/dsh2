@@ -3,9 +3,14 @@
 require 'carrierwave/processing/mime_types'
 
 CarrierWave.configure do |config|
+    config.storage = :fog
+    config.fog_directory = "digitalschoolhouse"
+
     config.fog_credentials = {
-      :provider               => 'AWS',
-      
+      :provider => 'AWS',
+      :aws_access_key_id => 'AKIAI6GVKK4GTCZTG5GA',
+      :aws_secret_access_key => 'insert secret access key'
+
     }
 
   end

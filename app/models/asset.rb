@@ -4,9 +4,7 @@ class Asset < ActiveRecord::Base
   belongs_to :classroom 
   belongs_to :theme
   belongs_to :user
-  
-
-  belongs_to :teacher, through: :classroom
+ 
   
 
   mount_uploader :image, ImageUploader

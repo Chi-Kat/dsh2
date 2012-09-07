@@ -1,5 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+
+
+<%= form_tag(root_url, :method => :get) do -%>
+
+  <%= select_tag :theme_id, options_from_collection_for_select(Theme.all, :id, :name), :prompt => "Select Theme" %>
+  <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.all, :id, :name), :prompt => "Select Classroom" %>
+  <%= select_tag :region_id, options_from_collection_for_select(Region.all, :id, :name), :prompt => "Select Region" %>
+
+  <%= submit_tag 'Filter' %>
+<% end %>
+
+<%= @classroom_id %>
+<%= @filters %>
+
 <h1>Listing assets</h1>
 
 <ul><% @assets.each do |asset| %>

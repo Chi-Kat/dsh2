@@ -57,8 +57,10 @@ users.each do |user|
 				role: 					user[:role],
 				password: 				user[:password],
 				password_confirmation:  user[:password_confirmation]
-				puts "Created User #{user[:name]}"
+				puts "   #{user[:name]}"
 end
+
+puts 'adding themes'
 
 Theme.delete_all
 
@@ -73,5 +75,5 @@ themes.each do |theme|
   Theme.create name: theme[:name]
 end
 
-puts 'added themes'
+
 

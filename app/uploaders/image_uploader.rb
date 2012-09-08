@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
     config.fog_credentials = {
       :provider => 'AWS',
       :aws_access_key_id => 'AKIAI6GVKK4GTCZTG5GA',
-      :aws_secret_access_key => 'insert secret access key'
+      :aws_secret_access_key => ''
 
     }
 

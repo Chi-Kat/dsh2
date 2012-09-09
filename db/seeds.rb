@@ -52,17 +52,18 @@ users = [
 ]
 
 users.each do |user|
-	User.create name: 					user[:name],
-				email: 					user[:email],
-				role: 					user[:role],
-				password: 				user[:password],
+	User.create 
+        name: 					        user[:name],
+				email: 					        user[:email],
+				role: 					        user[:role],
+				password: 				      user[:password],
 				password_confirmation:  user[:password_confirmation]
 				puts "   #{user[:name]}"
 end
 
 puts 'adding themes'
 
-Theme.delete_all
+Theme.destroy_all
 
 themes = [
           {:name => 'Classroom'},
@@ -74,6 +75,16 @@ themes = [
 themes.each do |theme|     
   Theme.create name: theme[:name]
 end
+
+# puts 'adding pictures'
+
+# Asset.destroy_all
+
+# assets = [
+#             {:classroom_id => 10, :image => 'https://digitalschoolhouse.s3.amazonaws.com/uploads/asset/image/2/h_c2.jpg'}
+
+#          ]
+
 
 
 

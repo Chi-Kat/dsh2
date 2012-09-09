@@ -3,16 +3,27 @@
 
 
 <%= form_tag(root_url, :method => :get) do -%>
+  <% if @theme_id.present?%>
+    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
+  <% else %>
+    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "Select Theme"%>
+  <% end %>
 
-  <%= select_tag :theme_id, options_from_collection_for_select(Theme.all, :id, :name), :prompt => "Select Theme" %>
-  <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.all, :id, :name), :prompt => "Select Classroom" %>
-  <%= select_tag :region_id, options_from_collection_for_select(Region.all, :id, :name), :prompt => "Select Region" %>
+  <% if @classroom_id.present?%>
+    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name,@classroom_id)%>
+  <% else %>
+    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name), :prompt => "Select Classroom"%>
+  <% end %>
+
+  <% if @region_id.present?%>
+    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name,@region_id)%>
+  <% else %>
+    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name), :prompt => "Select Region"%>
+  <% end %>
 
   <%= submit_tag 'Filter' %>
+  <%= link_to 'clear', root_url %>
 <% end %>
-
-<%= @classroom_id %>
-<%= @filters %>
 
 <h1>Listing assets</h1>
 

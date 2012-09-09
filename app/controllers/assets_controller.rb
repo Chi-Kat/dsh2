@@ -35,12 +35,17 @@ class AssetsController < ApplicationController
 
   def index
     
-    # Allows filter to work with classroom and theme, but not region yet
+    # Filter assets by chosen criteria
     @assets = Asset.scoped
     @assets = @assets.where( :theme_id =>  params["theme_id"])         unless params["theme_id"].blank?
     @assets = @assets.where( :classroom_id =>  params["classroom_id"]) unless params["classroom_id"].blank?
     @assets = @assets.where( :region_id =>  params["region_id"]) unless params["region_id"].blank?
     @assets = @assets.order("updated_at")
+
+    @theme_id = params["theme_id"]
+    @classroom_id = params["classroom_id"]
+    @region_id = params["region_id"]
+
 
     respond_to do |format|
       format.html # index.html.erb

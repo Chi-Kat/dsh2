@@ -39,6 +39,7 @@ class AssetsController < ApplicationController
     @assets = Asset.scoped
     @assets = @assets.where( :theme_id =>  params["theme_id"])         unless params["theme_id"].blank?
     @assets = @assets.where( :classroom_id =>  params["classroom_id"]) unless params["classroom_id"].blank?
+    @assets = @assets.where( :region_id =>  params["region_id"]) unless params["region_id"].blank?
     @assets = @assets.order("updated_at")
 
     respond_to do |format|

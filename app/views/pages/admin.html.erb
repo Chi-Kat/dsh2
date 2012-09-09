@@ -21,6 +21,8 @@
 	<%= submit_tag 'Add Media Asset' %>
 <% end %>
 
+<% if @form_type.present? %>
+ <%= render "#{@form_type}" %>
+<% end %>
 
-<%= render "#{@form_type}" %>
 

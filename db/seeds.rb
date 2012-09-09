@@ -40,15 +40,17 @@ classrooms.each do |classroom|
                    region_id: 	classroom[:region_id]
 end
 
+User.destroy_all
+
 puts 'adding admins'
 
 Admin.destroy_all
 
 admins = [
-			{:name => 'Kathy', 		:email => 'kathy.j.li@gmail.com', 			:role => 'Admin', :password => 'kathy', 	:password_confirmation => 'kathy'},
-			{:name => 'Adam', 		:email => 'adam.lupu@globalplayground.org', :role => 'Admin', :password => 'adam', 		:password_confirmation => 'adam'},
-			{:name => 'Shaan', 		:email => 'shahshaan@gmail.com', 			:role => 'Admin', :password => 'shaan', 	:password_confirmation => 'shaan'},
-			{:name => 'Enrique', 	:email => 'enrockq@gmail.com', 				:role => 'Admin', :password => 'enrique', 	:password_confirmation => 'enrique'}
+			{:name => 'Kathy', 		:email => 'kathy.j.li@gmail.com', :password => 'kathy', 	:password_confirmation => 'kathy'},
+			{:name => 'Adam', 		:email => 'adam.lupu@globalplayground.org', :password => 'adam', 		:password_confirmation => 'adam'},
+			{:name => 'Shaan', 		:email => 'shahshaan@gmail.com', :password => 'shaan', 	:password_confirmation => 'shaan'},
+			{:name => 'Enrique', 	:email => 'enrockq@gmail.com', :password => 'enrique', 	:password_confirmation => 'enrique'}
 ]
 
 admins.each do |admin|     

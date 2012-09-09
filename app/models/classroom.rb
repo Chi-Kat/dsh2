@@ -3,5 +3,5 @@ class Classroom < ActiveRecord::Base
 
   belongs_to :region
   has_many :assets
-  has_many :users
+  has_many :teachers
 end

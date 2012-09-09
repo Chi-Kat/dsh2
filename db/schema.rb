@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120908232024) do
+ActiveRecord::Schema.define(:version => 20120909025220) do
 
   create_table "assets", :force => true do |t|
     t.integer  "classroom_id"
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(:version => 20120908232024) do
     t.integer  "classroom_id"
     t.string   "name"
     t.string   "email"
-    t.string   "role"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "image"
     t.string   "password_digest"
+    t.string   "type"
   end
 
 end

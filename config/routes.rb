@@ -14,6 +14,8 @@ Dsh2::Application.routes.draw do
 
   resource :sessions, :only => [:new, :create, :destroy]
 
+  get '/assets/new' => 'assets#new', :as => :new_asset
+
   get '/about' => 'pages#about', :as => :about
   get '/admin' => 'pages#admin', :as => :admin
   get '/teacher' => 'pages#teacher', :as => :teacher

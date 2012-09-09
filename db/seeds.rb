@@ -40,25 +40,22 @@ classrooms.each do |classroom|
                    region_id: 	classroom[:region_id]
 end
 
-puts 'adding admin users'
+puts 'adding admins'
 
-User.destroy_all
+Admin.destroy_all
 
-users = [
+admins = [
 			{:name => 'Kathy', 		:email => 'kathy.j.li@gmail.com', 			:role => 'Admin', :password => 'kathy', 	:password_confirmation => 'kathy'},
 			{:name => 'Adam', 		:email => 'adam.lupu@globalplayground.org', :role => 'Admin', :password => 'adam', 		:password_confirmation => 'adam'},
 			{:name => 'Shaan', 		:email => 'shahshaan@gmail.com', 			:role => 'Admin', :password => 'shaan', 	:password_confirmation => 'shaan'},
 			{:name => 'Enrique', 	:email => 'enrockq@gmail.com', 				:role => 'Admin', :password => 'enrique', 	:password_confirmation => 'enrique'}
 ]
 
-users.each do |user|
-	User.create 
-        name: 					        user[:name],
-				email: 					        user[:email],
-				role: 					        user[:role],
-				password: 				      user[:password],
-				password_confirmation:  user[:password_confirmation]
-				puts "   #{user[:name]}"
+admins.each do |admin|     
+  Admin.create name:    admin[:name], 
+               email:   admin[:email],
+               password:   admin[:password],
+               password_confirmation:   admin[:password_confirmation]
 end
 
 puts 'adding themes'

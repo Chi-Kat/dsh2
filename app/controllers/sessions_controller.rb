@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		user = User.find_by_email(@email)
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
-			redirect_to root_url, notice: "Signed in as #{@email}."
+			redirect_to root_url, notice: "Welcome #{user.name}!"
 		else 
 			redirect_to new_sessions_url, notice: "Sign in unsuccessful."
 		end

@@ -1,10 +1,26 @@
 <h1>Admin Page</h1>
 
-<%= link_to "Add Classroom", new_classroom_url %><br>
-<%= link_to "Add User", new_user_url %><br>
-<%= link_to "Create Theme", new_theme_url %><br>
-<%= link_to "Add Media Asset", new_asset_url %><br>
 
-<div>
-	Div displaying new asset form
-</div>
+<%= form_tag(admin_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "add_classroom" %>
+	<%= submit_tag 'Add Classroom' %>
+<% end %>
+
+<%= form_tag(admin_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "add_user" %>
+	<%= submit_tag 'Add User' %>
+<% end %>
+
+<%= form_tag(admin_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "add_theme" %>
+	<%= submit_tag 'Create Theme Challenge' %>
+<% end %>
+
+<%= form_tag(admin_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "add_asset" %>
+	<%= submit_tag 'Add Media Asset' %>
+<% end %>
+
+
+<%= render "#{@form_type}" %>
+

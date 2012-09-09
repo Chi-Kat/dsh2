@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :classroom_id, :email, :name, :role, :image, :password, :password_confirmation
+  attr_accessible :email, :name, :image, :password, :password_confirmation
 
   has_many :assets
   
-
   has_secure_password
 
   mount_uploader :image, ImageUploader

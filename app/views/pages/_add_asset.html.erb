@@ -10,13 +10,20 @@
       </ul>
     </div>
   <% end %>
+  <% if @user.admin? %>
+  	<div class="field">
+    	<%= f.label :classroom_id %><br />
+    	<%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
+  	</div>
+  <% elsif @user.teacher? %>
+  	<div class="field">
+    	<%= f.hidden_field :classroom_id, {:value => @classroom.id}  %>
+  	</div>
+  <% end %>
+
  <div class="field">
     <%= f.label :theme_id %><br />
     <%= f.collection_select :theme_id, Theme.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :classroom_id %><br />
-    <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
   </div>
    <div class="field">
     <%= f.hidden_field :user_id, {:value => session[:user_id]} %>

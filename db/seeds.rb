@@ -90,9 +90,18 @@ themes.each do |theme|
   Theme.create name: theme[:name]
 end
 
-# puts 'adding pictures'
+#  puts 'adding a picture'
 
 # Asset.destroy_all
+
+# a = Asset.new
+# a.image = "https://digitalschoolhouse.s3.amazonaws.com/uploads/asset/image/2/h_c2.jpg"
+# a.classroom_id = Classroom.find_by_name('Project Honduras').id
+# a.theme_id = Theme.find_by_name('Classroom').id
+# a.user_id = User.find_by_name('Shaan')
+# a.title = "Teaching the class"
+# a.description = "The kids listen as they are learning a new topic"
+# a.save
 
 # assets = [
 #             {:classroom_id => 10, :image => 'https://digitalschoolhouse.s3.amazonaws.com/uploads/asset/image/2/h_c2.jpg'}

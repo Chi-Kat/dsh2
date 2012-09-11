@@ -1,37 +1,8 @@
 class AssetsController < ApplicationController
  
  before_filter :require_login, :except => [:index, :show]
- #before_filter :require_authorization, :except => [:index, :show, :new, :create]
  before_filter :require_auth_or_admin, :only => [:update, :edit, :destroy, :new]
-
-  def current_user
-    User.find_by_id(session["user_id"])
-  end
-
-  def require_login
-     if current_user.present?
-     else redirect_to root_url, notice: 'Please login.' 
-    end
-  end
-
-  # def require_authorization
-  #   if session["user_id"] == params["user_id"].to_i
-  #   else redirect_to root_url, notice: 'Require authorization'
-  #   end
-  # end
-
-  # def require_admin
-  #   if current_user.role == "Admin"
-  #   else redirect_to root_url, notice: 'Admin access only' 
-  #   end
-  # end
-
-  def require_auth_or_admin
-    if session["user_id"] == params["user_id"].to_i || current_user.role == "Admin"
-    else redirect_to root_url, notice: 'Not auth or admin.' 
-    end
-  end
-
+ # before_filter :require_authorization, :except => [:index, :show, :new, :create]
 
   def index
     
@@ -69,7 +40,6 @@ class AssetsController < ApplicationController
 
   # GET /assets/new
   # GET /assets/new.json
-
   def pdf
     @asset = Asset.new
   end

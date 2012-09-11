@@ -1,14 +1,20 @@
-<h1>Teacher Page</h1>
+<h1><%=@user.name%>'s Page</h1>
+<h2>
+	<%= @classroom.name %>
+	<%= "(#{@region.name})" %>
+</h2>
 
-	<% def current_user %>
-    <% User.find_by_id(session["user_id"]) %>
-  <% end %>
+<%= form_tag(teacher_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "add_asset" %>
+	<%= submit_tag 'Add Media Asset' %>
+<% end %>
 
-<%= link_to "Add Video", new_asset_url, :remote => true%><br>
-<%= link_to "Add Pictures", new_asset_url %><br>
-<%= link_to "Tell A Story", new_asset_url %><br>
-<%= link_to "Update Classrom Profile", edit_classroom_path(current_user.classroom_id)%><br>
 
-<div class="formm">
-	Div displaying new asset form
-</div>
+<%= form_tag(teacher_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "edit_classroom" %>
+	<%= submit_tag 'Update Classroom' %>
+<% end %>
+
+<% if @form_type.present? %>
+ <%= render "#{@form_type}" %>
+<% end %>

@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911014732) do
+ActiveRecord::Schema.define(:version => 20120911025016) do
 
-  create_table "assets", :force => true do |t|
+  create_table "attachments", :force => true do |t|
     t.integer  "classroom_id"
     t.integer  "theme_id"
     t.integer  "user_id"

@@ -25,21 +25,21 @@
   <%= link_to 'clear', root_url %>
 <% end %>
 
-<h1>Listing assets</h1>
+<h1>Listing attachments</h1>
 
-<ul><% @assets.each do |asset| %>
-    <div id = "assets">
-      <% if asset.image? %>
-        <%= image_tag asset.image_url(:thumb).to_s %>
+<ul><% @attachments.each do |attachment| %>
+    <div id = "attachments">
+      <% if attachment.image? %>
+        <%= image_tag attachment.image_url(:thumb).to_s %>
       <%else%>
-        <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(asset.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
       <%end%>
-      <%= asset.title %><br>
+      <%= attachment.title %><br>
     </div>
 
-  <%= link_to 'Show', asset %>
-  <%= link_to 'Edit', edit_asset_path(asset) %>
-  <%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <%= link_to 'Show', attachment %>
+  <%= link_to 'Edit', edit_attachment_path(attachment) %>
+  <%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 <% end %>
 </ul>
 
@@ -47,4 +47,4 @@
 
 <br />
 
-<%= link_to 'New Asset', new_asset_url %>
+<%= link_to 'New attachment', new_attachment_url %>

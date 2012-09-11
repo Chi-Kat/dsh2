@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
     config.fog_credentials = {
       :provider => 'AWS',
       :aws_access_key_id => 'AKIAI6GVKK4GTCZTG5GA',
-      :aws_secret_access_key => ''
+      :aws_secret_access_key => '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'
 
     }
 
@@ -25,7 +25,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
-  # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
+  # Include the Sprockets helpers for Rails 3.1+ attachment pipeline compatibility:
   # include Sprockets::Helpers::RailsHelper
   # include Sprockets::Helpers::IsolatedHelper
 
@@ -41,8 +41,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
-  #   # For Rails 3.1+ asset pipeline compatibility:
-  #   # asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+  #   # For Rails 3.1+ attachment pipeline compatibility:
+  #   # attachment_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end

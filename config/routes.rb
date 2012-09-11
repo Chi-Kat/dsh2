@@ -1,10 +1,10 @@
 Dsh2::Application.routes.draw do
 
-  root :to => 'assets#index', :as => :root
+  root :to => 'attachments#index', :as => :root
 
   resources :users
 
-  resources :assets
+  resources :attachments
 
   resources :themes
 
@@ -14,7 +14,7 @@ Dsh2::Application.routes.draw do
 
   resource :sessions, :only => [:new, :create, :destroy]
 
-  get '/assets/new' => 'assets#new', :as => :new_asset
+  get '/attachments/new' => 'attachments#new', :as => :new_attachment
 
   get '/about' => 'pages#about', :as => :about
   get '/admin' => 'pages#admin', :as => :admin

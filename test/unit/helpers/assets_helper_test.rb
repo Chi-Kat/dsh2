@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class AssetsHelperTest < ActionView::TestCase
+class AttachmentsHelperTest < ActionView::TestCase
 end

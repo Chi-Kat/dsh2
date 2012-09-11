@@ -10,16 +10,16 @@ class PagesController < ApplicationController
 
 	def admin
 		@user = User.find_by_id(session[:user_id])
-		@asset = Asset.new
+		@attachment = Attachment.new
 		@classroom = Classroom.new
 		@theme = Theme.new
-		@user = User.new
+		@new_user = User.new
 		@form_type = params[:form_type]
 	end
 
 	def teacher
 	    @user = User.find_by_id(session[:user_id])
-	    @asset = Asset.new
+	    @attachment = Attachment.new
 	    @classroom = Classroom.find_by_id(@user.classroom_id)
 	    @form_type = params[:form_type]
 	    @region = Region.find(@classroom.region_id)

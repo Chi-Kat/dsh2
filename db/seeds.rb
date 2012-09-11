@@ -92,10 +92,10 @@ end
 
 #  puts 'adding a picture'
 
-# Asset.destroy_all
+# Attachment.destroy_all
 
-# a = Asset.new
-# a.image = "https://digitalschoolhouse.s3.amazonaws.com/uploads/asset/image/2/h_c2.jpg"
+# a = Attachment.new
+# a.image = "https://digitalschoolhouse.s3.amazonaws.com/uploads/Attachment/image/2/h_c2.jpg"
 # a.classroom_id = Classroom.find_by_name('Project Honduras').id
 # a.theme_id = Theme.find_by_name('Classroom').id
 # a.user_id = User.find_by_name('Shaan')
@@ -103,8 +103,8 @@ end
 # a.description = "The kids listen as they are learning a new topic"
 # a.save
 
-# assets = [
-#             {:classroom_id => 10, :image => 'https://digitalschoolhouse.s3.amazonaws.com/uploads/asset/image/2/h_c2.jpg'}
+# Attachments = [
+#             {:classroom_id => 10, :image => 'https://digitalschoolhouse.s3.amazonaws.com/uploads/Attachment/image/2/h_c2.jpg'}
 
 #          ]
 

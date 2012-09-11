@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :image, :password, :password_confirmation
 
-  has_many :assets
+  has_many :attachments
   
   has_secure_password
 

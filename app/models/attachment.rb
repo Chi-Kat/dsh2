@@ -1,4 +1,4 @@
-class Asset < ActiveRecord::Base
+class Attachment < ActiveRecord::Base
   attr_accessible :classroom_id, :contributors, :description, :theme_id, :title, :user_id, :youtube_url, :image, :remote_image_url, :region_id
 
   belongs_to :classroom 

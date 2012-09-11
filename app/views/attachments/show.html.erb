@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Theme:</b>
+  <%= @attachment.theme.name %>
+</p>
+
+<p>
+  <b>Classroom:</b>
+  <%= @attachment.classroom.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @attachment.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @attachment.description %>
+</p>
+
+<p>
+  <b>Contributors:</b>
+  <%= @attachment.contributors %>
+</p>
+
+<div id = "attachments">
+  <% if @attachment.image? %>
+    <%= image_tag @attachment.image_url.to_s %>
+  <%else%>
+    <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(@attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
+  <%end%>
+</div>
+
+
+<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
+<%= link_to 'Back', attachments_path %>

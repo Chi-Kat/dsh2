@@ -1,4 +1,4 @@
-module AssetsHelper
+module AttachmentsHelper
 
 	def shorten(youtube_url)
     domain = youtube_url.split('/')[2]

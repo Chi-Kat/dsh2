@@ -17,8 +17,8 @@
 <% end %>
 
 <%= form_tag(admin_url, :method => :get) do -%>
-	<%= hidden_field_tag :form_type, "add_asset" %>
-	<%= submit_tag 'Add Media Asset' %>
+	<%= hidden_field_tag :form_type, "add_attachment" %>
+	<%= submit_tag 'Add Media attachment' %>
 <% end %>
 
 <% if @form_type.present? %>

@@ -1,7 +1,7 @@
 class AttachmentsController < ApplicationController
  
  before_filter :require_login, :except => [:index, :show]
- before_filter :require_auth_or_admin, :only => [:update, :edit, :destroy, :new]
+ before_filter :require_auth_or_admin, :only => [:update, :edit, :destroy]
  # before_filter :require_authorization, :except => [:index, :show, :new, :create]
 
   def index

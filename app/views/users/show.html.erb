@@ -1,6 +1,8 @@
 <p>
+  <% if @user.type == "Teacher" %>
   <b>Classroom:</b>
-  <%#= @user.classroom.name %>
+  <%= @user.classroom.name %>
+  <%end%>
 </p>
 
 <p>
@@ -15,10 +17,10 @@
 
 <p>
   <b>Role:</b>
-  <%= @user.role %>
+  <%= @user.type %>
 </p>
 
-<div id = "assets">
+<div id = "attachments">
     <%if @user.image.present? %>
 	    <%= image_tag @user.image_url(:thumb).to_s %>
     <%end%>

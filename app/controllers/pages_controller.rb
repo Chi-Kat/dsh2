@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-	before_filter :require_login
+	#before_filter :require_login
 	before_filter :require_admin, :only => [:admin]
 	before_filter :require_teacher, :only => [:teacher]
 

@@ -21,7 +21,7 @@ def require_login
 # end
 
 def require_auth_or_admin
-  if session["user_id"] == params["id"].to_i || current_user.role == "Admin"
+  if session["user_id"] == params["id"].to_i || current_user.type == "Admin"
   else redirect_to root_url, notice: 'Not auth or admin.' 
   end
 end

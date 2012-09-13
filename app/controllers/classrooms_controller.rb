@@ -14,7 +14,7 @@ class ClassroomsController < ApplicationController
   end
 
   def require_auth_or_admin
-    if current_user.classroom_id == params["id"].to_i || current_user.role == "Admin"
+    if current_user.classroom_id == params["id"].to_i || current_user.type == "Admin"
     else redirect_to root_url, notice: 'Not auth or admin.' 
     end
   end

@@ -6,29 +6,12 @@ class Attachment < ActiveRecord::Base
   belongs_to :user
   belongs_to :region
   before_create :set_region
-  before_create :set_format
 
   mount_uploader :image, ImageUploader
 
  	def set_region
  		self.region_id = Classroom.find(self.classroom_id).region_id
  	end
-
- 	def set_format
- 		if self.image?
- 			self.format = "Image"
- 		else
- 			self.format = "Video"
- 		end	
- 	end
-
-  	def video?
-    	if self.format == "Video"
-      		true
-    	else
-      		false
-    	end
-  	end
 
   	def video_tag(link)
     	domain = link.split('/')[2]
@@ -86,23 +69,6 @@ class Attachment < ActiveRecord::Base
               <p><a href='#{link}' target='_blank'>Click here</a> to go directly to the video.</p>"
     	end
   	end
-
-  	# def thumb
-  	# 	size = "40x40"
-  	# 	if self.image?
-  	# 		return image_tag "#{self.image_url(:thumb).to_s}", :size => size
-  	# 	elsif self.video? 
-  	# 		return "video"
-  	# 	end
-  	# end
-  
-	# def thumb
- #  		if self.image?
- #  			return self.image_url(:thumb).to_s
- #  		elsif self.video?
- #  			return "#{video_tag(self.youtube_url)}"
- #  		end
- #  	end
 
 
 

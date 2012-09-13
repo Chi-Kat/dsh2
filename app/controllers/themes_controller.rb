@@ -7,7 +7,7 @@ before_filter :require_admin, :except => [:index, :show]
   end
   
   def require_admin
-    if current_user.role == "Admin"
+    if current_user.type == "Admin"
     else redirect_to root_url, notice: 'Admin access only' 
     end
   end

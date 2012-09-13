@@ -2,7 +2,7 @@
 
 <p>   
 	<div>
-	    <% @classroom.users.each do |user| %>
+	    <% @classroom.teachers.each do |user| %>
 	   <h1><%= user.name%>'s Classroom -
 	    <%end%>
 	   <%= @classroom.name %>,
@@ -12,18 +12,18 @@
  </div>
 </p>
 
-<div id = "assets">
-  <% @classroom.assets.each do |asset| %>
-  <div class = "asset">
-    <%if asset.image.present? %>
-	    <a href = "<%= asset_path(asset)%>"> <%= image_tag asset.image_url(:thumb).to_s %></a>
-			<div class = "title"><%=asset.title %> </div>
+<div id = "attachments">
+  <% @classroom.attachments.each do |attachment| %>
+  <div class = "attachment">
+    <%if attachment.image.present? %>
+	    <a href = "<%= attachment_path(attachment)%>"> <%= image_tag attachment.image_url(:thumb).to_s %></a>
+			<div class = "title"><%=attachment.title %> </div>
     <%else%>
-	    <%= link_to image_tag("youtube.png", :width => "200"), asset_path(asset) %>
+	    <%= link_to image_tag("youtube.png", :width => "200"), attachment_path(attachment) %>
     <%end%>
     <div class = "actions">
-      <%= link_to "edit", edit_asset_path(asset) %> 
-      <%= link_to "remove", asset, :confirm => 'Are you sure?', :method => :delete %>
+      <%= link_to "edit", edit_attachment_path(attachment) %> 
+      <%= link_to "remove", attachment, :confirm => 'Are you sure?', :method => :delete %>
     </div>
   </div>
   <%end%>

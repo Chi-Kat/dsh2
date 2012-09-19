@@ -1,6 +1,6 @@
 <h1>Admin Page</h1>
 
-
+<div id="new" style="border:1px solid">
 <%= form_tag(admin_url, :method => :get) do -%>
 	<%= hidden_field_tag :form_type, "add_classroom" %>
 	<%= submit_tag 'Add Classroom' %>
@@ -24,5 +24,15 @@
 <% if @form_type.present? %>
  <%= render "#{@form_type}" %>
 <% end %>
+</div>
+
+<br>
+
+<div id="edit" style="border:1px solid">
+	<%=link_to "Edit Classroom", classrooms_url%>
+	<%=link_to "Edit Facilitator", users_url%>
+	<%=link_to "Edit Theme", themes_url%>
+	<%=link_to "Edit Media", attachments_url%>
+</div>
 
 

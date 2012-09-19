@@ -1,25 +1,15 @@
 <h1>Listing classrooms</h1>
 
-<table>
-  <tr>
-    <th>Region</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul>
 <% @classrooms.each do |classroom| %>
-  <tr>
-    <td><%= classroom.region.name %></td>
-    <td><%= classroom.name %></td>
-    <td><%= link_to 'Show', classroom %></td>
-    <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
-    <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <li><%= classroom.region.name %>
+    <%= link_to (image_tag classroom.image_url.to_s), classroom %>
+    <%= classroom.teachers.name %> - 
+    <%= classroom.name %>
+    <%#= link_to 'Show', classroom %>
+  </li>
 <% end %>
-</table>
-
+</ul>
 <br />
 
-<%= link_to 'New Classroom', new_classroom_path %>
+<%#= link_to 'New Classroom', new_classroom_path %>

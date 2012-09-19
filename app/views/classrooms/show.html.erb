@@ -7,6 +7,7 @@
 	    <%end%>
 	   <%= @classroom.name %>,
      <%= @classroom.region.name %></h1>
+     <%= image_tag @classroom.image_url(:thumb).to_s%>
      <p>Stats<%= @classroom.stat %></p>
      <p>Description<%= @classroom.description %></p>
  </div>
@@ -21,6 +22,7 @@
     <%else%>
 	    <%= link_to image_tag("youtube.png", :width => "200"), attachment_path(attachment) %>
     <%end%>
+    <%=attachment.title%>
     <div class = "actions">
       <%= link_to "edit", edit_attachment_path(attachment) %> 
       <%= link_to "remove", attachment, :confirm => 'Are you sure?', :method => :delete %>
@@ -30,5 +32,12 @@
   <div class = "clear"></div>
 </div>
 
-<%= link_to 'Edit', edit_classroom_path(@classroom) %> |
-<%= link_to 'Back', classrooms_path %>
+<%if current_user.type == "Admin" %>
+<%= link_to "Delete Classroom", @classroom, :confirm => 'Are you sure?', :method => :delete %>
+<%end%>
+
+<%#if teacher.classroom_id = params["id"]%>
+<%= link_to 'Edit', edit_classroom_path(@classroom) %> 
+<%#end%>
+
+<%= link_to 'All Classrooms', classrooms_path %>

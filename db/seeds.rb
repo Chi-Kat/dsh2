@@ -16,7 +16,8 @@ regions = [
               {:name => 'Uganda'},
               {:name => 'Thailand'},
               {:name => 'Vietnam'},
-              {:name => 'Cambodia'}
+              {:name => 'Cambodia'},
+              {:name => 'Global'}
            ]
              
 regions.each do |region|     

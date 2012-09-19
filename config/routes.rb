@@ -1,5 +1,7 @@
 Dsh2::Application.routes.draw do
 
+  resources :theme_suggestions
+
   root :to => 'attachments#index', :as => :root
 
   resources :users

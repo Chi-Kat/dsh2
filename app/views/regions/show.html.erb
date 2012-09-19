@@ -1,18 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @region.name %>
-</p>
+<h1><%= @region.name %></h1>
+<%=image_tag @region.image_url(:thumb).to_s%>
+<%=@region.description%>
 
-<p>
-  <b>Schools:</b>
-  <ul>
+ <ul>
   <% @region.classrooms.each do |classroom| %>
-  <li><%= classroom.name %></li>
+  <li><%= link_to (image_tag classroom.image_url.to_s), classroom %>
+	<%= classroom.name %></li>
   <%end%>
 </ul>
-</p>
 
 <%= link_to 'Edit', edit_region_path(@region) %> |
 <%= link_to 'Back', regions_path %>

@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
 	#before_filter :require_login
 	before_filter :require_admin, :only => [:admin]
-	before_filter :require_teacher, :only => [:teacher]
+	before_filter :require_facilitator, :only => [:facilitator]
 
 
 	def about
@@ -17,7 +17,7 @@ class PagesController < ApplicationController
 		@form_type = params[:form_type]
 	end
 
-	def teacher
+	def facilitator
 	    @user = User.find_by_id(session[:user_id])
 	    @attachment = Attachment.new
 	    @classroom = Classroom.find_by_id(@user.classroom_id)

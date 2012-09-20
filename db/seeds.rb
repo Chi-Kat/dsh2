@@ -43,17 +43,17 @@ end
 
 User.destroy_all
 
-puts 'adding teachers'
+puts 'adding facilitators'
 
-Teacher.destroy_all
+Facilitator.destroy_all
 number = 0
 classrooms.each do |classroom|     
   number = number + 1
-  t = Teacher.new
-  t.name =                  "#{classroom[:name]} Teacher"
-  t.email =                 "teacher#{number}@gmail.com"
-  t.password =              "teacher"
-  t.password_confirmation = "teacher"
+  t = Facilitator.new
+  t.name =                  "#{classroom[:name]} Facilitator"
+  t.email =                 "facilitator#{number}@gmail.com"
+  t.password =              "facilitator"
+  t.password_confirmation = "facilitator"
   t.classroom_id =          Classroom.find_by_name(classroom[:name]).id
   t.save
 end

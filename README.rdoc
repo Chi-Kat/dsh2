@@ -24,3 +24,10 @@ Random Problems When Git Pull-ing
   brew uninstall imagemagick
   brew install imagemagick --disable-openmp
 
+9/18/12
+
+  Development to Production
+    -commit "installing mailer for new applicant"
+    -used http://railscasts.com/episodes/61-sending-email-revised
+    -
+

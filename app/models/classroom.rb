@@ -3,7 +3,7 @@ class Classroom < ActiveRecord::Base
 
   belongs_to :region
   has_many :attachments
-  has_many :teachers
+  has_many :facilitators
 
   mount_uploader :image, ImageUploader
 end

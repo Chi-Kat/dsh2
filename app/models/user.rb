@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
     	end
   	end
 
-  	def teacher?
-    	if self.type == "Teacher"
+  	def facilitator?
+    	if self.type == "Facilitator"
       		true
     	else
       		false

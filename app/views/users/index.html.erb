@@ -7,7 +7,7 @@
     Name: <%= user.name %><br>
    <!--  Email: <%#= user.email %><br> -->
     Type: <%= user.type %><br>
-    <%if user.type == "Teacher" %>
+    <%if user.type == "Facilitator" %>
     	Classroom: <%= user.classroom.name %><br>
   	<%end%>
     <%= link_to 'Show', user %> |

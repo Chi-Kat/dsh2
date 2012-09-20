@@ -24,10 +24,10 @@ class ApplicationController < ActionController::Base
 	end
 	end
 
-	def require_teacher
+	def require_facilitator
 	@user = User.find_by_id(session[:user_id])
-	if @user.type == "Teacher"
-	  else redirect_to root_url, notice: 'Teacher access only' 
+	if @user.type == "Facilitator"
+	  else redirect_to root_url, notice: 'Facilitator access only' 
 	end
 	end
 

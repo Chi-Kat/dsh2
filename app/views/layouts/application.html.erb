@@ -18,9 +18,9 @@
 		<% if logged_in? %>
 			 | 
 			<% if current_user.type == "Admin" %>
-				<%= link_to "Admin Panel", admin_url %>
+				<%= link_to "Admin Panel", admin_url(current_user.id) %>
 			<% elsif current_user.type == "Facilitator"%>
-				<%= link_to "Facilitator Panel", facilitator_url %>
+				<%= link_to "Facilitator Panel", facilitator_url(current_user.id) %>
 			<% end %>
 		<% end %>
 		 | 

@@ -1,5 +1,9 @@
 Dsh2::Application.routes.draw do
 
+  resources :admins
+
+  resources :facilitators
+
   resources :applicants
   
   resources :theme_suggestions
@@ -21,8 +25,8 @@ Dsh2::Application.routes.draw do
   get '/attachments/new' => 'attachments#new', :as => :new_attachment
 
   get '/about' => 'pages#about', :as => :about
-  get '/admin' => 'pages#admin', :as => :admin
-  get '/facilitator' => 'pages#facilitator', :as => :facilitator
+  # get '/admin' => 'pages#admin', :as => :admin
+  # get '/facilitator' => 'pages#facilitator', :as => :facilitator
 
   
 

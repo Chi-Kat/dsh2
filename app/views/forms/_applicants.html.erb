@@ -1,0 +1,42 @@
+<h1>Listing applicants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Classroom</th>
+    <th>Region</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+	<% @applicants.each do |applicant| %>
+  		<tr>
+    		<td><%= applicant.name %></td>
+    		<td><%= applicant.email %></td>
+    		<td><%= applicant.classroom %></td>
+    		<td><%= applicant.region.name %></td>
+    		<td><%= applicant.note %></td>
+    		<td><%#= link_to 'Show', applicant %></td>
+    		<td><%#= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <%= form_tag(applicant, method: :delete) do -%>
+                <%= hidden_field_tag :id, "#{applicant.id}" %>
+                <%= hidden_field_tag :status, "Accept" %>
+                <td><%= submit_tag 'Accept' %></td>
+            <% end %>
+            <%= form_tag(applicant, method: :delete) do -%>
+                <%= hidden_field_tag :id, "#{applicant.id}" %>
+                <%= hidden_field_tag :status, "Reject" %>
+                <td><%= submit_tag 'Reject' %></td>
+            <% end %>
+            <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
+
+            
+
+  		</tr>
+	<% end %>
+
+</table>

@@ -1,4 +1,7 @@
 class ApplicantsController < ApplicationController
+ 
+  before_filter :require_admin, :only => [:index, :show, :edit, :update, :destroy]
+
   # GET /applicants
   # GET /applicants.json
   def index
@@ -55,7 +58,9 @@ class ApplicantsController < ApplicationController
     end
   end
 
-  # PUT /applicants/1
+
+
+  # PUT /applicants/1 
   # PUT /applicants/1.json
   def update
     @applicant = Applicant.find(params[:id])
@@ -75,6 +80,30 @@ class ApplicantsController < ApplicationController
   # DELETE /applicants/1.json
   def destroy
     @applicant = Applicant.find(params[:id])
+    @status = params[:commit]
+    if @status == "Accept"
+      #Create classroom according to applicant
+      classroom = Classroom.new
+      classroom.name = @applicant.classroom
+      classroom.region_id = @applicant.region_id
+      classroom.save
+      classroom_id = Classroom.last.id
+
+      password = "temporary"
+
+      @facilitator = Facilitator.new
+      @facilitator.name = @applicant.name
+      @facilitator.email = @applicant.email
+      @facilitator.classroom_id = classroom_id
+      @facilitator.password = password
+      @facilitator.password_confirmation = password
+      @facilitator.save
+
+      ApplicantMailer.application_acceptance(@facilitator).deliver
+    elsif @status == "Reject"
+      ApplicantMailer.application_termination(@applicant).deliver
+    end
+
     @applicant.destroy
 
     respond_to do |format|

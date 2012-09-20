@@ -21,6 +21,11 @@
 	<%= submit_tag 'Add Media attachment' %>
 <% end %>
 
+<%= form_tag(admin_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "applicants" %>
+	<%= submit_tag 'Applicant Listing' %>
+<% end %>
+
 <% if @form_type.present? %>
 	<%= render "forms/#{@form_type}" %>
 <% end %>

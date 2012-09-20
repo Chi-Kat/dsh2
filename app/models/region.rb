@@ -3,6 +3,7 @@ class Region < ActiveRecord::Base
 
   has_many :classrooms
   has_many :attachments
+  has_many :applicants
   has_many :facilitators, :through => :classrooms
 
   mount_uploader :image, ImageUploader

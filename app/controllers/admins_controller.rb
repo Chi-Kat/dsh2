@@ -1,4 +1,7 @@
 class AdminsController < ApplicationController
+
+  before_filter :require_admin
+
   # GET /admins
   # GET /admins.json
   def index
@@ -21,6 +24,7 @@ class AdminsController < ApplicationController
     @theme = Theme.new
     @new_user = User.new
     @form_type = params[:form_type]
+    @applicants = Applicant.all
 
     respond_to do |format|
       format.html # show.html.erb

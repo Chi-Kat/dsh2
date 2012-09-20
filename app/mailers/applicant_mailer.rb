@@ -15,4 +15,16 @@ class ApplicantMailer < ActionMailer::Base
     	mail to: "digitalschoolhouse@gmail.com", subject: "New Applicant"
   	end
 
+  	def application_termination(applicant)
+    	@applicant = applicant
+
+    	mail to: applicant.email, subject: "Application declined"
+  	end
+
+  	def application_acceptance(applicant)
+  		@applicant = applicant
+
+    	mail to: applicant.email, subject: "Application accepted"
+  	end
+
 end

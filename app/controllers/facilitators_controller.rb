@@ -13,8 +13,7 @@ class FacilitatorsController < ApplicationController
   # GET /facilitators/1
   # GET /facilitators/1.json
   def show
-    @facilitator = Facilitator.find(params[:id])
-
+      @facilitator = Facilitator.find(params[:id])
       @user = User.find_by_id(session[:user_id])
       @attachment = Attachment.new
       @classroom = Classroom.find_by_id(@user.classroom_id)

@@ -14,13 +14,13 @@
 		<%= link_to "Digital Schoolhouse", root_url %>
 		<%= link_to "About Us", about_url %>
 		
-		<!-- Link for teacher/admin -->
+		<!-- Link for facilitator/admin -->
 		<% if logged_in? %>
 			 | 
 			<% if current_user.type == "Admin" %>
 				<%= link_to "Admin Panel", admin_url %>
-			<% elsif current_user.type == "Teacher"%>
-				<%= link_to "Teacher Panel", teacher_url %>
+			<% elsif current_user.type == "Facilitator"%>
+				<%= link_to "Facilitator Panel", facilitator_url %>
 			<% end %>
 		<% end %>
 		 | 
@@ -30,6 +30,8 @@
 			<%= link_to "Logout", sessions_url, :method => :delete %>
 		<% else %>
 			<%= link_to "Login", new_sessions_url %>
+			|
+			<%= link_to "Join", new_applicant_url %>
 		<% end %>
 
 

@@ -1,5 +1,7 @@
 Dsh2::Application.routes.draw do
 
+  resources :applicants
+  
   resources :theme_suggestions
 
   root :to => 'attachments#index', :as => :root
@@ -20,7 +22,7 @@ Dsh2::Application.routes.draw do
 
   get '/about' => 'pages#about', :as => :about
   get '/admin' => 'pages#admin', :as => :admin
-  get '/teacher' => 'pages#teacher', :as => :teacher
+  get '/facilitator' => 'pages#facilitator', :as => :facilitator
 
   
 

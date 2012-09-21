@@ -21,10 +21,11 @@ class ApplicantMailer < ActionMailer::Base
     	mail to: applicant.email, subject: "Application declined"
   	end
 
-  	def application_acceptance(applicant)
-  		@applicant = applicant
+  	def application_acceptance(facilitator,temp_password)
+  		@facilitator = facilitator
+      @temp_password = temp_password
 
-    	mail to: applicant.email, subject: "Application accepted"
+    	mail to: @facilitator.email, subject: "Application accepted"
   	end
 
 end

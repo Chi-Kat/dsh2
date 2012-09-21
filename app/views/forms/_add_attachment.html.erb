@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <% if @user.admin? %>
+  <% if current_user.admin? %>
   	<div class="field">
     	<%= f.label :classroom_id %><br />
     	<%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
   	</div>
-  <% elsif @user.facilitator? %>
+  <% elsif current_user.facilitator? %>
   	<div class="field">
     	<%= f.hidden_field :classroom_id, {:value => @classroom.id}  %>
   	</div>

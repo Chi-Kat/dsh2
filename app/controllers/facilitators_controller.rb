@@ -14,9 +14,9 @@ class FacilitatorsController < ApplicationController
   # GET /facilitators/1.json
   def show
       @facilitator = Facilitator.find(params[:id])
-      @user = User.find_by_id(session[:user_id])
+      #@user = User.find_by_id(session[:user_id])
       @attachment = Attachment.new
-      @classroom = Classroom.find_by_id(@user.classroom_id)
+      @classroom = Classroom.find_by_id(@facilitator.classroom_id)
       @form_type = params[:form_type]
       @region = Region.find(@classroom.region_id)
 

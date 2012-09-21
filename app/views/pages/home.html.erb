@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<%= form_tag(root_url, :method => :get) do -%>
+  <% if @theme_id.present?%>
+    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
+  <% else %>
+    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "Select Theme"%>
+  <% end %>
+
+  <% if @classroom_id.present?%>
+    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name,@classroom_id)%>
+  <% else %>
+    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name), :prompt => "Select Classroom"%>
+  <% end %>
+
+  <% if @region_id.present?%>
+    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name,@region_id)%>
+  <% else %>
+    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name), :prompt => "Select Region"%>
+  <% end %>
+
+  <%= submit_tag 'Filter' %>
+  <%= link_to 'clear', root_url %>
+<% end %>
+
+<h1>Homepage</h1>
+
+<ul><% @attachments.each do |attachment| %>
+    <div id = "attachments">
+      <% if attachment.image? %>
+        <%= image_tag attachment.image_url(:thumb).to_s %>
+      <%else%>
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
+      <%end%>
+      <%= attachment.title %><br>
+    </div>
+
+  <%= link_to 'Show', attachment %>
+  <%= link_to 'Edit', edit_attachment_path(attachment) %>
+  <%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<% end %>
+</ul>
+
+
+
+<br />
+
+<%= link_to 'New attachment', new_attachment_url %>

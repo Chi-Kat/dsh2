@@ -9,20 +9,6 @@ class User < ActiveRecord::Base
 
   validates :email, :uniqueness => true
 
-	def admin?
-    	if self.type == "Admin"
-      		true
-    	else
-      		false
-    	end
-  	end
 
-  	def facilitator?
-    	if self.type == "Facilitator"
-      		true
-    	else
-      		false
-    	end
-  	end
 
 end

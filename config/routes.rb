@@ -8,7 +8,7 @@ Dsh2::Application.routes.draw do
   
   resources :theme_suggestions
 
-  root :to => 'attachments#index', :as => :root
+  root :to => 'pages#home', :as => :root
 
   resources :users
 

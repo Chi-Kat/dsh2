@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 	def current_user
 		User.find_by_id(session["user_id"])
 	end
+	
+	def current_facilitator
+		Facilitator.find_by_id(session["facilitator_id"])
+	end
 
 	def require_login
    	if current_user.present?
@@ -32,5 +36,20 @@ class ApplicationController < ActionController::Base
 	end
 	end
 
+  def admin?
+    if self.type == "Admin"
+    		true
+  	else
+    		false
+  	end
+	end
 
+	def facilitator?
+  	if self.type == "Facilitator"
+    		true
+  	else
+    		false
+  	end
+	end
+	
 end

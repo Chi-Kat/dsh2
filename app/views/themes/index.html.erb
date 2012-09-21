@@ -11,4 +11,31 @@
 
 <br />
 
-<%= link_to 'New Theme', new_theme_path %>
+<%#= link_to 'New Theme', new_theme_path %>
+
+
+<h1>Suggested Themes</h1>
+
+<ul>
+<% @theme_suggestions.each do |theme_suggestion| %>
+<li><%= theme_suggestion.name %>
+  <%if theme_suggestion.user_id = session["user_id"] %>
+    <%= link_to 'Delete', theme_suggestion, method: :delete, data: { confirm: 'Are you sure?'}%>
+    <%end%>
+  </li>
+<%end%>
+</ul>
+
+<br />
+<%= form_for(@theme_suggestion) do |f| %>
+  <div class="field">
+    <%= f.label :name, "New Suggestion"%><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, {:value => session["user_id"]} %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit"%>
+  </div>
+<% end %>

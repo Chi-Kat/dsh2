@@ -26,7 +26,7 @@ class ThemeSuggestionsController < ApplicationController
 
     respond_to do |format|
       if @theme_suggestion.save
-        format.html { redirect_to theme_suggestions_url, notice: 'Theme suggestion was successfully created.' }
+        format.html { redirect_to themes_url, notice: 'Theme suggestion was successfully created.' }
         format.json { render json: @theme_suggestion, status: :created, location: @theme_suggestion }
       else
         format.html { render action: "new" }

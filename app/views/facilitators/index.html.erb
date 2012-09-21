@@ -9,6 +9,7 @@
 
 <% @facilitators.each do |facilitator| %>
   <tr>
+    <td><%= facilitator.name %>
     <td><%= link_to 'Show', facilitator %></td>
     <td><%= link_to 'Edit', edit_facilitator_path(facilitator) %></td>
     <td><%= link_to 'Destroy', facilitator, method: :delete, data: { confirm: 'Are you sure?' } %></td>

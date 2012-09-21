@@ -67,7 +67,7 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.update_attributes(params[:applicant])
-        format.html { redirect_to @applicant, notice: 'Applicant was successfully updated.' }
+        format.html { redirect_to admin_url(current_user.id), notice: 'Applicant was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -89,17 +89,18 @@ class ApplicantsController < ApplicationController
       classroom.save
       classroom_id = Classroom.last.id
 
-      password = "temporary"
+      temp_password = (0...8).map{65.+(rand(25)).chr}.join
 
-      @facilitator = Facilitator.new
-      @facilitator.name = @applicant.name
-      @facilitator.email = @applicant.email
-      @facilitator.classroom_id = classroom_id
-      @facilitator.password = password
-      @facilitator.password_confirmation = password
-      @facilitator.save
+      facilitator = Facilitator.new
+      facilitator.name = @applicant.name
+      facilitator.email = @applicant.email
+      facilitator.classroom_id = classroom_id
+      facilitator.password = temp_password
+      facilitator.password_confirmation = temp_password
+      facilitator.save
+      facilitator = Facilitator.last
 
-      ApplicantMailer.application_acceptance(@facilitator).deliver
+      ApplicantMailer.application_acceptance(facilitator,temp_password).deliver
     elsif @status == "Reject"
       ApplicantMailer.application_termination(@applicant).deliver
     end
@@ -107,7 +108,7 @@ class ApplicantsController < ApplicationController
     @applicant.destroy
 
     respond_to do |format|
-      format.html { redirect_to applicants_url }
+      format.html { redirect_to admin_url(current_user.id) }
       format.json { head :no_content }
     end
   end

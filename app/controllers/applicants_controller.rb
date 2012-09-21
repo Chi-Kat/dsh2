@@ -49,7 +49,7 @@ class ApplicantsController < ApplicationController
       if @applicant.save
         ApplicantMailer.application_confirmation(@applicant).deliver
         ApplicantMailer.application_notification(@applicant).deliver
-        format.html { redirect_to @applicant, notice: 'Applicant was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Applicant was successfully created.' }
         format.json { render json: @applicant, status: :created, location: @applicant }
       else
         format.html { render action: "new" }

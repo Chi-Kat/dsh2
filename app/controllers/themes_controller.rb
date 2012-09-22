@@ -14,6 +14,8 @@ before_filter :require_admin, :except => [:index, :show]
   
   def index
     @themes = Theme.all
+    @theme_suggestions = ThemeSuggestion.all
+    @theme_suggestion = ThemeSuggestion.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -52,6 +54,7 @@ before_filter :require_admin, :except => [:index, :show]
   # POST /themes.json
   def create
     @theme = Theme.new(params[:theme])
+    @theme_suggestion = ThemeSuggestion.new(params[:theme_suggestion])
 
     respond_to do |format|
       if @theme.save

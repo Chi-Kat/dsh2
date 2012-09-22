@@ -1,17 +1,33 @@
+
+
+
+
+<div id="formcontent">
 <h1>Sign In </h1>
 
 <p id="notice"><%= notice %></p>
 
 <%= form_tag sessions_url do %>
+
+<div class="input">
+	<p><%= label_tag :email %></p>
 	<div class="field">
-		<%= label_tag :email %><br>
+
 		<%= text_field_tag :email %>
 	</div>
+</div><!--input end-->
+	
+<div class="input">
+	<p><%= label_tag :password %></p>
 	<div class="field">
-		<%= label_tag :password %><br>
 		<%= password_field_tag :password %>
 	</div>
+</div><!--input end-->
+
+	<div class="submitbox">
 	<div class="actions">
 		<%= submit_tag 'Sign In' %>
 	</div>
+	</div><!--submitbox end-->
 <%end%>
+</div><!--formcontent end-->

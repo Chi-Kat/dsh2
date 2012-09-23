@@ -1,3 +1,63 @@
 // Place all the styles related to the Classrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+index styles
+*/
+
+.classlist {
+width: 99%;
+height: 550px;
+padding: 0px;
+margin: 280px auto 0px;	
+}
+
+.classlist h1 {
+text-align: center;
+width: 100%;
+padding: 0px;
+}
+
+.classlist ul {
+width: 100%;
+margin: 0px;
+padding: 0px 0px 0px 12px;
+}
+
+.classlist ul li {
+list-style: none;
+width: 214px;
+height: 214px;
+float: left;
+margin: 8px;
+padding: 12px;
+background-color: #fff;
+border: 1px solid #ccc;	
+}
+
+.classlist ul li h4 {
+font: bold 16px Helvetica, sans-serif;
+color: #666;
+width: 100%;
+margin: 0px;
+padding: 0px 0px 6px 0px;	
+}
+
+.classlist ul li p {
+font: bold 14px Helvetica, sans-serif;
+color: #666;
+width: 100%;
+margin: 0px;
+padding: 0px 0px 6px 0px;	
+}
+
+/*
+show styles
+*/
+
+#classroomstats {
+width: 99%;
+border: 1px solid red; 	
+	
+}

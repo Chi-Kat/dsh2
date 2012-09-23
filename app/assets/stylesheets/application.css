@@ -189,3 +189,39 @@ text-align: center;
 padding: 0px;
 margin: 160px 0px 0px 0px;		
 }
+
+/*
+applicants styles: applicants css file not present in assets folder, inserting styles below
+*/
+
+#applicantcontainer {
+	width: 324px;
+margin: 350px auto 0px;
+
+height: 648px;
+margin-top: 250px;
+padding: 0px 0px 0px 20px;
+background-color: #fff;
+border: 1px solid #ccc;
+}
+
+
+#applicantcontainer .inputtext {
+border: 1px solid blue;
+}
+
+#applicantcontainer .inputtext p {
+font: normal 14px Helvetica, sans-serif;
+border: 1px solid yellow;	
+}
+
+#applicantcontainer .field {
+	width: 310px;
+
+	float: left;
+	padding: 0px 0px 16px 0px;
+
+}
+
+
+

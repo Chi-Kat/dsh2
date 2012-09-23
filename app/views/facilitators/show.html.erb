@@ -1,20 +1,27 @@
+<article class="classcontainer">
 <h1><%=@facilitator.name%>'s Page</h1>
 <h2>
 	<%= @classroom.name %>
 	<%= "(#{@region.name})" %>
 </h2>
-
+	
+	<div class="attachment">
 <%= form_tag(facilitator_url, :method => :get) do -%>
 	<%= hidden_field_tag :form_type, "add_attachment" %>
 	<%= submit_tag 'Add Media attachment' %>
 <% end %>
+</div>
 
-
+	<div class="attachment">
 <%= form_tag(facilitator_url, :method => :get) do -%>
 	<%= hidden_field_tag :form_type, "edit_classroom" %>
 	<%= submit_tag 'Update Classroom' %>
 <% end %>
+</div>
 
+	<div class="present">
 <% if @form_type.present? %>
 	<%= render "forms/#{@form_type}" %>
 <% end %>
+</div>
+</article>

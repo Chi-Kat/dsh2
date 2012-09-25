@@ -20,9 +20,9 @@
 		<% if logged_in? %>
 			 
 			<% if current_user.type == "Admin" %>
-				<%= link_to "Admin Panel", admin_url(current_user.id) %>
+				<li><div class="button"><%= link_to "Admin Panel", admin_url(current_user.id) %></div></li>
 			<% elsif current_user.type == "Facilitator"%>
-				<%= link_to "Facilitator Panel", facilitator_url(current_user.id) %>
+				<li><div class="button"><%= link_to "Facilitator Panel", facilitator_url(current_user.id) %></div></li>
 			<% end %>
 		<% end %>
 		  
@@ -48,12 +48,16 @@
 		</hgroup>
 
 </header>
+<<<<<<< HEAD
 
 
 
 <%= yield %>
 
 
+=======
+<%= yield %>
+>>>>>>> 235a4a367d51759d4081f12945297c7865fcc403
 <footer>
 	<p>Digital School House 2012 &reg</p>
 </footer>

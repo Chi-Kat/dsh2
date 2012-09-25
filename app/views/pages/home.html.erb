@@ -35,6 +35,8 @@
         <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
       <%end%>
       <%= attachment.title %><br>
+      <%=link_to "#{attachment.classrooms.name}", "#{classrooms/theme.id_url}" %><br>
+      <%= attachment.regions.name %><br>
     </div>
 
   <%= link_to 'Show', attachment %>

@@ -24,8 +24,8 @@ margin: 0px;
 #container {
 width: 800px;
 min-height: 950px;
-background-image: url(../assets/background.jpg);
-background-color: #a4f7f4;
+/*background-image: url(../assets/background.jpg);*/
+/*background-color: #a4f7f4;*/
 margin: auto;
 border: 1px solid #fff;
 border-left: 1px solid #ccc;

@@ -1,3 +1,53 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h1 {
+font: bold 20px Helvetica, sans-serif;	
+padding: 0px 0px 0px 18px;	
+margin: 16px 0px 8px 0px;
+color: #666;
+}
+
+#formcontent {
+width: 310px;
+height: 380px;
+margin: 0px auto;
+padding: 0px;
+	}
+
+
+
+.input p {
+float: left;
+width: 80px;
+font: normal 14px Helvetica, sans-serif;
+margin:3px 0px 0px 0px;
+padding: 0px;	
+}
+
+.input {
+float: right;
+width: 94%;		
+margin:0px;
+padding: 0px 0px 15px 0px;	
+}
+
+.field{
+width: 100%;	
+	
+}
+
+.submitbox {
+	float: right;
+padding-top: 10px;
+padding-right: 60px;
+width: 60px;
+}
+
+
+
+.field p {
+
+}

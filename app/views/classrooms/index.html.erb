@@ -1,15 +1,18 @@
-<h1>Listing classrooms</h1>
 
+<article class="classlist">
+<h1>Listing classrooms</h1>
 <ul>
 <% @classrooms.each do |classroom| %>
-  <li><%= classroom.region.name %>
-    <%= link_to (image_tag classroom.map_url.to_s), classroom %>
-    <%#= classroom.facilitators.name %> - 
+  <li><h4><%= classroom.region.name %></h4>
+    <%= link_to (image_tag classroom.image_url.to_s), classroom %><br>
+    <p><%#= classroom.facilitators.name %></p>  - 
     <%= classroom.name %>
     <%#= link_to 'Show', classroom %>
+
   </li>
 <% end %>
 </ul>
 <br />
 
 <%#= link_to 'New Classroom', new_classroom_path %>
+</article>

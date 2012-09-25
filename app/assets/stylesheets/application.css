@@ -22,16 +22,16 @@ margin: 0px;
 	}
 
 #container {
-width: 800px;
+width: 975px;
 min-height: 950px;
-/*background-image: url(../assets/background.jpg);*/
-/*background-color: #a4f7f4;*/
+background-image: url(../assets/background.jpg);
+background-color: #a4f7f4;
 margin: auto;
 border: 1px solid #fff;
 border-left: 1px solid #ccc;
 border-right: 1px solid #ccc;
 border-bottom: 1px solid #ccc;
-	background-repeat: no-repeat;
+background-repeat: no-repeat;
 	}
 	
 #container img {
@@ -121,6 +121,8 @@ background-image: linear-gradient(top, #3093c7, #1c5a85);filter:progid:DXImageTr
 }
 
 nav .button {
+	width: 21%;
+	height: 10px;
 }
 			
 nav .button a {
@@ -235,7 +237,6 @@ about styles
 
 #about_content {
 	margin:auto;
-    margin-top: 250px;
 	width: 92%;	
 }
 

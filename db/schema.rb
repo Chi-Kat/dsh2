@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920013540) do
+ActiveRecord::Schema.define(:version => 20120925165840) do
 
   create_table "applicants", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120920013540) do
     t.text     "stat"
     t.text     "description"
     t.string   "image"
+    t.string   "map"
   end
 
   create_table "regions", :force => true do |t|

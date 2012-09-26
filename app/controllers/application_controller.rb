@@ -41,11 +41,24 @@ class ApplicationController < ActionController::Base
 	end
 
 	def facilitator?
-  	if self.type == "Facilitator"
+  		if self.type == "Facilitator"
     		true
-  	else
+  		else
     		false
-  	end
+  		end
+	end
+
+	def array_of_classroom_ids(theme_id)
+		classrooms_array = []
+		classrooms = Classroom.all
+		classrooms.each do |classroom|
+			attachments = Attachment.scoped
+			attachments = attachments.where(:theme_id => theme_id)
+			if attachments.find_by_classroom_id(classroom.id) != nil
+				classrooms_array.push classroom.id
+			end
+		end
+		return classrooms_array
 	end
 	
 end

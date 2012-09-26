@@ -25,6 +25,17 @@
   <%= link_to 'clear', root_url %>
 <% end %>
 
+<% @array_of_classroom_ids.each do |classroom_id| %>
+  <ul>
+    <%= Classroom.find_by_id(classroom_id).name %>
+    <% attachments = @attachments.where( :theme_id =>  @current_theme.id) %>
+    <% attachments = @attachments.where( :classroom_id =>  classroom_id) %>
+    <% attachments.each do |attachment| %>
+      <li><%= attachment.title %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h1>Homepage</h1>
 
 <% @attachments.each do |attachment| %>

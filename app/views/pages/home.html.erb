@@ -27,23 +27,22 @@
 
 <h1>Homepage</h1>
 
-<ul><% @attachments.each do |attachment| %>
+<% @attachments.each do |attachment| %>
     <div id = "attachments">
       <% if attachment.image? %>
         <%= image_tag attachment.image_url(:thumb).to_s %>
       <%else%>
         <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
       <%end%>
-      <%= attachment.title %><br>
-      <%=link_to "#{attachment.classrooms.name}", "#{classrooms/theme.id_url}" %><br>
-      <%= attachment.regions.name %><br>
+        <%= attachment.title %><br>
+        <%=link_to "#{attachment.classroom.name}", classrooms_url %><br>
+        <%= attachment.classroom.region.name %><br>
+        <%= link_to 'Show', attachment %>
+        <%= link_to 'Edit', edit_attachment_path(attachment) %>
+        <%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
-
-  <%= link_to 'Show', attachment %>
-  <%= link_to 'Edit', edit_attachment_path(attachment) %>
-  <%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 <% end %>
-</ul>
+
 
 
 

@@ -3,23 +3,20 @@
 require 'carrierwave/processing/mime_types'
 
 CarrierWave.configure do |config|
-    config.storage = :fog
-    config.fog_directory = "digitalschoolhouse"
 
     config.fog_credentials = {
       :provider => 'AWS',
-      :aws_access_key_id => 'AKIAI6GVKK4GTCZTG5GA',
+      :aws_access_key_id => '',
       :aws_secret_access_key => ''
-
     }
+
+    config.fog_directory = "digitalschoolhouse"
 
   end
 
 class ImageUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::MimeTypes
-
-  process :set_content_type
+  #include CarrierWave::MimeTypes
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick

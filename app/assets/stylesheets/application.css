@@ -11,54 +11,6 @@
  *= require_self
  *= require_tree .
  */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-}
 
 
 body {
@@ -135,19 +87,22 @@ Page Nav and Menu
 nav {
 float: right;
 width: 42%;
+height: 10px;
 padding: 0px;
 margin: 0px 0px 0px 0px;
 
 }
 
 nav ul {
-	padding-right: 14px;
+	padding-right:14px;
 }
 	
 
 nav li {
 	width: 21%;
+	height: 10px;
 	font-size: 12px;
+
 	font-family: Helvetica, sans-serif;
 float: right;	
 list-style: none;	
@@ -162,30 +117,23 @@ background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
 background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
 background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
 background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
-background-image: linear-gradient(top, #3093c7, #1c5a85);
-filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3093c7, endColorstr=#1c5a85);
+background-image: linear-gradient(top, #3093c7, #1c5a85);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3093c7, endColorstr=#1c5a85);
 }
 
-<<<<<<< HEAD
 nav .button {
 	width: 21%;
 	height: 10px;
-=======
-.button {
-	display: block;
-	width: 100%;
-	height: 100%;
->>>>>>> 235a4a367d51759d4081f12945297c7865fcc403
 }
 			
-nav a {
-	width: 100%;
-	display: block;
+nav .button a {
 	color: #FFF;
-	font-size: 12px;
-	text-decoration:none;
-	font-family: Helvetica, sans-serif;
-}
+	padding
+width: 100%;
+font-size: 12px;
+text-decoration:none;
+font-family: Helvetica, sans-serif;
+
+			}
 		
 nav li:hover {	
 
@@ -203,8 +151,8 @@ Page Footer
 */
 
 footer {
-	clear: both;
-	margin-top: 80px;;
+clear: both;
+margin-top: 80px;;
 width: 100%;	
 	}
 	
@@ -295,22 +243,24 @@ about styles
 
 .AboutDSH {
 	width: 100%;
+	height: 350px;
 	border: 1px solid #666;	
-	background-color: #fff;
-	margin-bottom: 120px;
+		background-color: #fff;
 }
 
 .about{
 	float: left;
-	width: 420px;
+	width: 350px;
+
 	padding: 0px;
 	margin-bottom: 120px;
 
 }
 
 .meet{
-	float: right;
-	width: 420px;
+		float: right;
+	width: 350px;
+
 	padding: 0px;
 	margin: 0px;
 

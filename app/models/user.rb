@@ -9,6 +9,12 @@ class User < ActiveRecord::Base
 
   validates :email, :uniqueness => true
 
+  def admin?
+  	self.type == "Admin"
+  end
 
+  def facilitator?
+    self.type == "Facilitator"
+  end
 
 end

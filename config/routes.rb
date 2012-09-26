@@ -1,5 +1,11 @@
 Dsh2::Application.routes.draw do
 
+  resources :services_offereds
+
+  resources :client_types
+
+  resources :availabilities
+
   resources :admins
 
   resources :facilitators

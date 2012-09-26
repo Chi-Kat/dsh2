@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  current_program: MyText
+  new_service: MyText
+  building_capacity: 1
+  kitchen: false
+
+two:
+  current_program: MyText
+  new_service: MyText
+  building_capacity: 1
+  kitchen: false

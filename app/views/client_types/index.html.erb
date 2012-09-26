@@ -1,0 +1,79 @@
+<h1>Listing client_types</h1>
+
+<table>
+  <tr>
+    <th>Children</th>
+    <th>Num child</th>
+    <th>Adult</th>
+    <th>Num adult</th>
+    <th>Lgbtq</th>
+    <th>Num </th>
+    <th>Lgbtq</th>
+    <th>Young adult</th>
+    <th>Num young adult</th>
+    <th>Senior</th>
+    <th>Num senior</th>
+    <th>Immigrant</th>
+    <th>Num immigrant</th>
+    <th>Families</th>
+    <th>Num families</th>
+    <th>Military</th>
+    <th>Num military</th>
+    <th>Homeless</th>
+    <th>Num homeless</th>
+    <th>Offender</th>
+    <th>Num offender</th>
+    <th>Environment</th>
+    <th>Num environment</th>
+    <th>Disabled</th>
+    <th>Num disabled</th>
+    <th>Health</th>
+    <th>Num health</th>
+    <th>Purpose</th>
+    <th>Population</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @client_types.each do |client_type| %>
+  <tr>
+    <td><%= client_type.children %></td>
+    <td><%= client_type.num_child %></td>
+    <td><%= client_type.adult %></td>
+    <td><%= client_type.num_adult %></td>
+    <td><%= client_type.LGBTQ %></td>
+    <td><%= client_type.num_ %></td>
+    <td><%= client_type.LGBTQ %></td>
+    <td><%= client_type.young_adult %></td>
+    <td><%= client_type.num_young_adult %></td>
+    <td><%= client_type.senior %></td>
+    <td><%= client_type.num_senior %></td>
+    <td><%= client_type.immigrant %></td>
+    <td><%= client_type.num_immigrant %></td>
+    <td><%= client_type.families %></td>
+    <td><%= client_type.num_families %></td>
+    <td><%= client_type.military %></td>
+    <td><%= client_type.num_military %></td>
+    <td><%= client_type.homeless %></td>
+    <td><%= client_type.num_homeless %></td>
+    <td><%= client_type.offender %></td>
+    <td><%= client_type.num_offender %></td>
+    <td><%= client_type.environment %></td>
+    <td><%= client_type.num_environment %></td>
+    <td><%= client_type.disabled %></td>
+    <td><%= client_type.num_disabled %></td>
+    <td><%= client_type.health %></td>
+    <td><%= client_type.num_health %></td>
+    <td><%= client_type.purpose %></td>
+    <td><%= client_type.population %></td>
+    <td><%= link_to 'Show', client_type %></td>
+    <td><%= link_to 'Edit', edit_client_type_path(client_type) %></td>
+    <td><%= link_to 'Destroy', client_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Client type', new_client_type_path %>

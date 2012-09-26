@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Current program:</b>
+  <%= @services_offered.current_program %>
+</p>
+
+<p>
+  <b>New service:</b>
+  <%= @services_offered.new_service %>
+</p>
+
+<p>
+  <b>Building capacity:</b>
+  <%= @services_offered.building_capacity %>
+</p>
+
+<p>
+  <b>Kitchen:</b>
+  <%= @services_offered.kitchen %>
+</p>
+
+
+<%= link_to 'Edit', edit_services_offered_path(@services_offered) %> |
+<%= link_to 'Back', services_offereds_path %>

@@ -1,0 +1,133 @@
+<%= form_for(@client_type) do |f| %>
+  <% if @client_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client_type.errors.count, "error") %> prohibited this client_type from being saved:</h2>
+
+      <ul>
+      <% @client_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :children %><br />
+    <%= f.check_box :children %>
+  </div>
+  <div class="field">
+    <%= f.label :num_child %><br />
+    <%= f.number_field :num_child %>
+  </div>
+  <div class="field">
+    <%= f.label :adult %><br />
+    <%= f.check_box :adult %>
+  </div>
+  <div class="field">
+    <%= f.label :num_adult %><br />
+    <%= f.number_field :num_adult %>
+  </div>
+  <div class="field">
+    <%= f.label :LGBTQ %><br />
+    <%= f.check_box :LGBTQ %>
+  </div>
+  <div class="field">
+    <%= f.label :num_ %><br />
+    <%= f.text_field :num_ %>
+  </div>
+  <div class="field">
+    <%= f.label :LGBTQ %><br />
+    <%= f.number_field :LGBTQ %>
+  </div>
+  <div class="field">
+    <%= f.label :young_adult %><br />
+    <%= f.check_box :young_adult %>
+  </div>
+  <div class="field">
+    <%= f.label :num_young_adult %><br />
+    <%= f.number_field :num_young_adult %>
+  </div>
+  <div class="field">
+    <%= f.label :senior %><br />
+    <%= f.check_box :senior %>
+  </div>
+  <div class="field">
+    <%= f.label :num_senior %><br />
+    <%= f.number_field :num_senior %>
+  </div>
+  <div class="field">
+    <%= f.label :immigrant %><br />
+    <%= f.check_box :immigrant %>
+  </div>
+  <div class="field">
+    <%= f.label :num_immigrant %><br />
+    <%= f.number_field :num_immigrant %>
+  </div>
+  <div class="field">
+    <%= f.label :families %><br />
+    <%= f.check_box :families %>
+  </div>
+  <div class="field">
+    <%= f.label :num_families %><br />
+    <%= f.number_field :num_families %>
+  </div>
+  <div class="field">
+    <%= f.label :military %><br />
+    <%= f.check_box :military %>
+  </div>
+  <div class="field">
+    <%= f.label :num_military %><br />
+    <%= f.number_field :num_military %>
+  </div>
+  <div class="field">
+    <%= f.label :homeless %><br />
+    <%= f.check_box :homeless %>
+  </div>
+  <div class="field">
+    <%= f.label :num_homeless %><br />
+    <%= f.number_field :num_homeless %>
+  </div>
+  <div class="field">
+    <%= f.label :offender %><br />
+    <%= f.check_box :offender %>
+  </div>
+  <div class="field">
+    <%= f.label :num_offender %><br />
+    <%= f.number_field :num_offender %>
+  </div>
+  <div class="field">
+    <%= f.label :environment %><br />
+    <%= f.check_box :environment %>
+  </div>
+  <div class="field">
+    <%= f.label :num_environment %><br />
+    <%= f.number_field :num_environment %>
+  </div>
+  <div class="field">
+    <%= f.label :disabled %><br />
+    <%= f.check_box :disabled %>
+  </div>
+  <div class="field">
+    <%= f.label :num_disabled %><br />
+    <%= f.number_field :num_disabled %>
+  </div>
+  <div class="field">
+    <%= f.label :health %><br />
+    <%= f.check_box :health %>
+  </div>
+  <div class="field">
+    <%= f.label :num_health %><br />
+    <%= f.number_field :num_health %>
+  </div>
+  <div class="field">
+    <%= f.label :purpose %><br />
+    <%= f.text_area :purpose %>
+  </div>
+  <div class="field">
+    <%= f.label :population %><br />
+    <%= f.text_area :population %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

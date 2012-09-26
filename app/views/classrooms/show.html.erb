@@ -3,14 +3,28 @@
  
 	<div class="classroom_info">
 	    <% @classroom.facilitators.each do |user| %>
-	   <h1><%= user.name%>'s Classroom -
+	   <h1><%= user.name%>'s Classroom - 
 	    <%end%>
-	   <%= @classroom.name %>,
+	   <%= @classroom.name %>,	
      <%= @classroom.region.name %></h1>
+     
+     <div class="classroom_content">
+	 <div class="class_stats">
      <%= image_tag @classroom.map_url(:thumb).to_s%>
+     <div class="stats_box">
      <p>Stats<%= @classroom.stat %></p>
+     </div>
+     </div>
+
+     <div class="class_description">
      <p>Description<%= @classroom.description %></p>
+     </div>
+     </div>
+     
+     <div class="class_image">
      <%= image_tag @classroom.image_url(:thumb).to_s%>
+     </div>
+
  </div>
 
  <%Theme.all.each_with_index do |theme| %>

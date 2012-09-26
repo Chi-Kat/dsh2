@@ -6,12 +6,7 @@
 index styles
 */
 
-.classroom_info {
-	width: 90%;
-	height: 300px;
-	border: 1px solid black;
-	margin: 150px auto 0px;
-}
+
 
 .classlist {
 width: 99%;
@@ -65,4 +60,47 @@ show styles
 
 #classroomstats {
 width: 99%;	
+border: 1px solid red;
+}
+
+.classroom_info {
+	width: 90%;
+	height: 300px;
+	border: 1px solid black;
+	margin: 150px auto 0px;
+}
+
+.classroom h1 {
+width: 100%;
+text-align: center;	
+	
+}
+
+.classroom_content {
+	float: left;
+width: 49%;	
+border: 1px solid blue;	
+}
+
+.class_image {
+	float: right;
+width: 49%;		
+border: 1px solid green;		
+}
+
+.class_description {
+	width: 49%;
+	float: right;
+border: 1px solid gray;		
+}
+
+.class_stats {
+		width: 49%;
+		float: left;
+	border: 1px solid gray;	
+}
+
+.stats_box {
+		width: 98%;
+	border: 1px solid gray;		
 }

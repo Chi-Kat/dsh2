@@ -1,7 +1,7 @@
 <article id="classroomstats">
 <p id="notice"><%= notice %></p>
  
-	<div>
+	<div class="classroom_info">
 	    <% @classroom.facilitators.each do |user| %>
 	   <h1><%= user.name%>'s Classroom -
 	    <%end%>
@@ -38,13 +38,15 @@
 </div>
 <%end%>
 
-<%#if current_user.type == "Admin" %>
-<%= link_to "Delete Classroom", @classroom, :confirm => 'Are you sure?', :method => :delete %>
-<%#end%>
+<% if current_user.present? && current_user.admin? %>
+  <%= link_to "Delete Classroom", @classroom, :confirm => 'Are you sure?', :method => :delete %>
+<%end%>
 
-<%#if facilitator.classroom_id = params["id"]%>
-<%= link_to 'Edit', edit_classroom_path(@classroom) %> 
-<%#end%>
+<% if current_user.present? && current_user.facilitator?%>
+  <% if current_user.classroom_id == @classroom.id %>
+    <%= link_to 'Edit', edit_classroom_path(@classroom) %> 
+  <%end%>
+<%end%>
 
 <%= link_to 'All Classrooms', classrooms_path %>
 </article>

@@ -32,12 +32,12 @@ class ApplicationController < ActionController::Base
 	end
 	end
 
-  def admin?
-    if self.type == "Admin"
+	def admin?
+    	if self.type == "Admin"
     		true
-  	else
+  		else
     		false
-  	end
+  		end
 	end
 
 	def facilitator?

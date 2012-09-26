@@ -6,6 +6,13 @@
 index styles
 */
 
+.classroom_info {
+	width: 90%;
+	height: 300px;
+	border: 1px solid black;
+	margin: 150px auto 0px;
+}
+
 .classlist {
 width: 99%;
 height: 550px;
@@ -57,7 +64,5 @@ show styles
 */
 
 #classroomstats {
-width: 99%;
-border: 1px solid red; 	
-	
+width: 99%;	
 }

@@ -1,24 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 
+<p> Theme of the month: <%= @theme_of_the_month.name %>! </p>
 
 <%= form_tag(root_url, :method => :get) do -%>
   <% if @theme_id.present?%>
     <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
   <% else %>
-    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "Select Theme"%>
-  <% end %>
-
-  <% if @classroom_id.present?%>
-    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name,@classroom_id)%>
-  <% else %>
-    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name), :prompt => "Select Classroom"%>
-  <% end %>
-
-  <% if @region_id.present?%>
-    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name,@region_id)%>
-  <% else %>
-    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name), :prompt => "Select Region"%>
+    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "See Previous Themes"%>
   <% end %>
 
   <%= submit_tag 'Filter' %>

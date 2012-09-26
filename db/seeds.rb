@@ -84,6 +84,7 @@ themes = [
           {:name => 'Classroom'},
           {:name => 'Sports'},
           {:name => 'Music'},
+          {:name => 'Show Us Your Moves'},
           {:name => 'Food'}
          ]
         

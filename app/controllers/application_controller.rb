@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   		end
 	end
 
-	def array_of_classroom_ids(theme_id)
+	def array_of_classroom_ids_with_selected_theme(theme_id)
 		classrooms_array = []
 		classrooms = Classroom.all
 		classrooms.each do |classroom|

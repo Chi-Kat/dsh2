@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 
-<p> Theme of the month: <%= @theme_of_the_month.name %>! </p>
+<p> Theme of the month: </p>
+<p> "<%= @theme_of_the_month.name %>!" </p>
 
 <%= form_tag(root_url, :method => :get) do -%>
   <% if @theme_id.present?%>
@@ -14,34 +15,26 @@
   <%= link_to 'clear', root_url %>
 <% end %>
 
+<div id = "attachments">
 <% @array_of_classroom_ids.each do |classroom_id| %>
   <ul>
-    <%= Classroom.find_by_id(classroom_id).name %>
+    <%= link_to Classroom.find_by_id(classroom_id).name, classroom_url(classroom_id) %>
+    (<%= link_to Region.find_by_id(8).name, region_url(8) %>)
     <% attachments = @attachments.where( :theme_id =>  @current_theme.id) %>
     <% attachments = @attachments.where( :classroom_id =>  classroom_id) %>
     <% attachments.each do |attachment| %>
-      <li><%= attachment.title %></li>
+      <li>
+        <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
+        <%= attachment.title %>
+        <%= link_to 'Edit', edit_attachment_path(attachment) %>
+        <%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
     <% end %>
   </ul>
 <% end %>
+</div>
 
-<h1>Homepage</h1>
 
-<% @attachments.each do |attachment| %>
-    <div id = "attachments">
-      <% if attachment.image? %>
-        <%= image_tag attachment.image_url(:thumb).to_s %>
-      <%else%>
-        <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
-      <%end%>
-        <%= attachment.title %><br>
-        <%=link_to "#{attachment.classroom.name}", classrooms_url %><br>
-        <%= attachment.classroom.region.name %><br>
-        <%= link_to 'Show', attachment %>
-        <%= link_to 'Edit', edit_attachment_path(attachment) %>
-        <%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-<% end %>
 
 
 

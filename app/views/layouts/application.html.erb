@@ -14,15 +14,15 @@
 <header>
 	<nav>
         <ul>
-        <li><div class="button"><%= link_to "About Us", about_url %></div></li>
+        <li><div class="button"><%= link_to "About", about_url %></div></li>
 		
 		<!-- Link for facilitator/admin -->
 		<% if logged_in? %>
 			 
 			<% if current_user.type == "Admin" %>
-				<li><div class="button"><%= link_to "Admin Panel", admin_url(current_user.id) %></div></li>
+				<li><div class="button"><%= link_to "Update", admin_url(current_user.id) %></div></li>
 			<% elsif current_user.type == "Facilitator"%>
-				<li><div class="button"><%= link_to "Facilitator Panel", facilitator_url(current_user.id) %></div></li>
+				<li><div class="button"><%= link_to "Post New", facilitator_url(current_user.id) %></div></li>
 			<% end %>
 		<% end %>
 		  

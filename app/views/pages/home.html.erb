@@ -15,11 +15,13 @@
   <%= link_to 'clear', root_url %>
 <% end %>
 
+
+
 <div id = "attachments">
 <% @array_of_classroom_ids.each do |classroom_id| %>
   <ul>
     <%= link_to Classroom.find_by_id(classroom_id).name, classroom_url(classroom_id) %>
-    (<%= link_to Region.find_by_id(8).name, region_url(8) %>)
+    (<%= link_to Region.find_by_id(Classroom.find(classroom_id).region_id).name, region_url(Classroom.find(classroom_id).region_id) %>)
     <% attachments = @attachments.where( :theme_id =>  @current_theme.id) %>
     <% attachments = @attachments.where( :classroom_id =>  classroom_id) %>
     <% attachments.each do |attachment| %>

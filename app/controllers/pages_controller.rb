@@ -44,9 +44,6 @@ class PagesController < ApplicationController
  	@current_theme = Theme.find_by_id(@selected_theme_id)
     @array_of_classroom_ids = array_of_classroom_ids_with_selected_theme(@current_theme.id)
 
-
-
-
    	respond_to do |format|
     	format.html # index.html.erb
         format.json { render json: @attachments }

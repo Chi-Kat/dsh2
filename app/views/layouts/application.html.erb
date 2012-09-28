@@ -18,7 +18,6 @@
 		
 		<!-- Link for facilitator/admin -->
 		<% if logged_in? %>
-			 
 			<% if current_user.type == "Admin" %>
 				<li><div class="button"><%= link_to "Update", admin_url(current_user.id) %></div></li>
 			<% elsif current_user.type == "Facilitator"%>
@@ -27,7 +26,6 @@
 		<% end %>
 		  
 		<!-- Log in / Log out  -->
-		
 		<% if logged_in? %>
 		<li><div class="button"><%= link_to "Logout", sessions_url, :method => :delete %></div></li>
 		<% else %>
@@ -36,19 +34,15 @@
 		<li><div class="button"><%= link_to "Join", new_applicant_url %></div></li>
 		<% end %>
 		</ul>
-			</nav>		
-			
-		<hgroup>
-		<!-- Links for all -->
-		<!-- left titles -->
-		<h1><%= link_to "Digital Schoolhouse", root_url %></h1>
-		<h3>Uniting kids in classrooms around the world.<br>
-		Celebrating culture and media literacy.</h3>
-				<div class="logo"></div>
-		</hgroup>
-		
-		
-
+	</nav>		
+	<hgroup>
+	<!-- Links for all -->
+	<!-- left titles -->
+	<h1><%= link_to "Digital Schoolhouse", root_url %></h1>
+	<h3>Uniting kids in classrooms around the world.<br>
+	Celebrating culture and media literacy.</h3>
+			<div class="logo"></div>
+	</hgroup>
 </header>
 <%= yield %>
 <footer>

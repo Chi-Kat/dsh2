@@ -84,6 +84,7 @@ themes = [
           {:name => 'Classroom'},
           {:name => 'Sports'},
           {:name => 'Music'},
+          {:name => 'Show Us Your Moves'},
           {:name => 'Food'}
          ]
         
@@ -91,7 +92,7 @@ themes.each do |theme|
   Theme.create name: theme[:name]
 end
 
-#  puts 'adding a picture'
+# puts 'adding attachments'
 
 # Attachment.destroy_all
 

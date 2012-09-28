@@ -33,12 +33,8 @@
   <% @classroom.attachments.each do |attachment| %>
   <div class = "attachment">
     <%if attachment.theme_id == theme.id%>
-    <%=theme.name%>
-    <%if attachment.image.present? %>
-	    <a href = "<%= attachment_path(attachment)%>"> <%= image_tag attachment.image_url(:thumb).to_s %></a>
-    <%else%>
-	    <%= link_to image_tag("youtube.png", :width => "200"), attachment_path(attachment) %>
-    <%end%>
+      <%=theme.name%>
+	     <%= link_to image_tag(attachment.thumbnail_url, :width => "200"), attachment_path(attachment) %>
     <div class = "title"><%=attachment.title %> </div>
     <div class = "actions">
       <%= link_to "edit", edit_attachment_path(attachment) %> 

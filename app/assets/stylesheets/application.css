@@ -13,6 +13,52 @@
  */
 
 
+/*=======CSS Reset=======*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*=======DS CODE=======*/
 body {
 	font-size: 100%;
 	font-family: Helvetica, sans-serif;
@@ -22,7 +68,7 @@ body {
 }
 
 #container {
-	width: 975px;
+	width: 1000px;
 	min-height: 950px;
 	background-image: url(../assets/background.jpg);
 	background-color: #fff;
@@ -32,6 +78,7 @@ body {
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	background-repeat: no-repeat;
+	padding: 1%;
 }
 	
 #container img {
@@ -68,7 +115,7 @@ hgroup h1 {
 hgroup h1 a {
 	text-decoration: none;
 	color: #B76EB8;	
-/*color: #3366CC;*/
+	/*color: #3366CC;*/
 }
 
 hgroup h3 {
@@ -94,7 +141,6 @@ nav {
 nav ul {
 	padding-right:14px;
 }
-	
 
 nav li {
 	width: 21%;
@@ -172,47 +218,43 @@ Home page footer
 	
 .theme h5 {
 	font:normal 16px Helvetica, sans-serif;
-	padding: 0px;
-	margin: 0px;
 }
 	
 .theme h1 {
 	width: 100%;
 	font:bold 18px Helvetica, sans-serif;
-	padding: 0px;
-	margin: 0px;
+}
+
+.theme_select {
+	text-align: center;
 }
 	
-#homepage {
-	width: 100%;
+#attachments {
+	padding: 0 0 0 18px;
+	margin: 0 auto;
 }
 	
-#homepage ul {
-	width: 94%;
-	padding: 0px 20px;
-	margin-top: 20px;
-}
-	
-#homepage li img {
+#attachments ul {
+	width: 32%;
 	border: 1px solid black;
+	display: inline-block;
+	margin: 5px 1px;
 }
 		
-#homepage ul li {
+#attachments ul li {
 	padding: 12px 12px;
 	margin: 10px;
 	list-style: none;
-	float: right;
 	background-color: #fff;
 	border: 1px solid black;
-}
-	
-#homepage li p {
-	font:14px Helvetica, sans-serif;
+	display: block;
 	text-align: center;
-	padding: 10px 0px 0px 0px;
-	margin: 0px;
 }
-	
+
+#attachments ul li a {
+	text-decoration: none;
+}	
+
 span {
 	width: 60%;
 	float: right;
@@ -253,12 +295,15 @@ about styles
 	margin: 0px;
 }
 
+h1 {
+	font: bold 20px Helvetica, sans-serif;	
+	color: #666;
+}
+
 h5 {
 	font: bold 15px Helvetica, sans-serif;
 	color: #666;		
-	text-align: center;	
-	padding: 5px 0px 5px 0px;
-	margin: 0px;	
+	text-align: center;
 }
 
 .description p {
@@ -273,31 +318,27 @@ applicants styles: applicants css file not present in assets folder, inserting s
 
 #applicantcontainer {
 	width: 324px;
-margin: 350px auto 0px;
-
-height: 648px;
-margin-top: 250px;
-padding: 0px 0px 0px 20px;
-background-color: #fff;
-border: 1px solid #ccc;
+	margin: 350px auto 0px;
+	height: 648px;
+	margin-top: 250px;
+	padding: 0px 0px 0px 20px;
+	background-color: #fff;
+	border: 1px solid #ccc;
 }
 
-
 #applicantcontainer .inputtext {
-border: 1px solid blue;
+	border: 1px solid blue;
 }
 
 #applicantcontainer .inputtext p {
-font: normal 14px Helvetica, sans-serif;
-border: 1px solid yellow;	
+	font: normal 14px Helvetica, sans-serif;
+	border: 1px solid yellow;	
 }
 
 #applicantcontainer .field {
 	width: 310px;
-
 	float: left;
 	padding: 0px 0px 16px 0px;
-
 }
 
 

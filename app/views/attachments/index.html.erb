@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-
-
 <%= form_tag(root_url, :method => :get) do -%>
   <% if @theme_id.present?%>
     <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
@@ -20,7 +17,6 @@
   <% else %>
     <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name), :prompt => "Select Region"%>
   <% end %>
-
   <%= submit_tag 'Filter' %>
   <%= link_to 'clear', root_url %>
 <% end %>

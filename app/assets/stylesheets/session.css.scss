@@ -2,49 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-h1 {
-font: bold 20px Helvetica, sans-serif;	
-padding: 0px 0px 0px 18px;	
-margin: 16px 0px 8px 0px;
-color: #666;
+#loginbox {
+	width: 310px;
+	height: 180px;
+	margin: 150px auto 0px;
+	padding: 0px;
 }
 
-#loginbox {
-width: 310px;
-height: 180px;
-margin: 150px auto 0px;
-padding: 0px;
-	}
-
 .input p {
-float: left;
-width: 80px;
-font: normal 14px Helvetica, sans-serif;
-margin:3px 0px 0px 0px;
-padding: 0px;	
+	float: left;
+	width: 80px;
+	font: normal 14px Helvetica, sans-serif;
+	margin:3px 0px 0px 0px;
+	padding: 0px;	
 }
 
 .input {
-float: right;
-width: 94%;		
-margin:0px;
-padding: 0px 0px 5px 0px;	
+	float: right;
+	width: 94%;		
+	margin:0px;
+	padding: 0px 0px 5px 0px;	
 }
 
 .field{
-width: 100%;	
-	
+	width: 100%;		
 }
 
 .submitbox {
 	float: right;
-padding-right: 80px;
-width: 60px;
+	padding-right: 80px;
+	width: 60px;
 }
 
-
-
 .field p {
-
 }

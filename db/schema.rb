@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120925165840) do
+ActiveRecord::Schema.define(:version => 20120930192837) do
 
   create_table "applicants", :force => true do |t|
     t.string   "name"
@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(:version => 20120925165840) do
 
   create_table "themes", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "prompt"
+    t.boolean  "current_theme"
   end
 
   create_table "users", :force => true do |t|

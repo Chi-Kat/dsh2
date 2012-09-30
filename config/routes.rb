@@ -1,5 +1,7 @@
 Dsh2::Application.routes.draw do
 
+  match '/current_theme' => "themes#falsify_all_others"
+
   resources :admins
 
   resources :facilitators

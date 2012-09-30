@@ -2,6 +2,17 @@ class ThemesController < ApplicationController
 
 before_filter :require_admin, :except => [:index, :show]
 
+  def falsify_all_others
+    self.current_theme = true
+    @themes = Theme.all
+      @themes.each do |theme|
+        if theme.id != self.id
+          theme.current_theme = false
+          theme.save
+        end
+      end
+  end
+
   def current_user
     User.find_by_id(session["user_id"])
   end

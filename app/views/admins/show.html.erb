@@ -1,48 +1,41 @@
-<h1>Administrative Options</h1>
-
-<div class="admin_options">
-	<p>Add Resources:</p>
-
-	<%= form_tag(admin_url, :method => :get, :class => "admin_button") do -%>
-	<%= hidden_field_tag :form_type, "add_classroom" %>
-	<%= submit_tag 'Add Classroom' %>
-<% end %>
-
-<%= form_tag(admin_url, :method => :get) do -%>
-	<%= hidden_field_tag :form_type, "add_region" %>
-	<%= submit_tag 'Add Region' %>
-<% end %>
-
-<%= form_tag(admin_url, :method => :get) do -%>
-	<%= hidden_field_tag :form_type, "add_theme" %>
-	<%= submit_tag 'Create Theme Challenge' %>
-<% end %>
-
-<%= form_tag(admin_url, :method => :get) do -%>
-	<%= hidden_field_tag :form_type, "add_attachment" %>
-	<%= submit_tag 'Add Media attachment' %>
-<% end %>
-
-<%= form_tag(admin_url, :method => :get) do -%>
-	<%= hidden_field_tag :form_type, "applicants" %>
-	<%= submit_tag 'Applicant Listing' %>
-<% end %>
-
-	<div class="edit_box">
-		<p>Edit Resources:</p>
-		<ul class="edit_list">
-			<li><%=link_to "Edit Classrooms", classrooms_url, :class => "admin_button" %></li>
-			<li><%=link_to "Edit Facilitators", facilitators_url%></li>
-			<li><%=link_to "Edit Themes", themes_url%></li>
-			<li><%=link_to "Edit Media", attachments_url%></li>
-		</ul>
+<div class="admin_content">
+	<h1>Administrative Options</h1>
+	<div class="admin_options">
+		<h5>Add Resources:</h5>
+		<%= form_tag(admin_url, :method => :get) do -%>
+		<%= hidden_field_tag :form_type, "add_classroom" %>
+		<%= submit_tag 'Add Classroom', :class => 'submit_button' %>
+	<% end %>
+		<%= form_tag(admin_url, :method => :get) do -%>
+		<%= hidden_field_tag :form_type, "add_user" %>
+		<%= submit_tag 'Add User', :class => 'submit_button' %>
+	<% end %>
+		<%= form_tag(admin_url, :method => :get) do -%>
+		<%= hidden_field_tag :form_type, "add_theme" %>
+		<%= submit_tag 'Create Theme Challenge', :class => 'submit_button' %>
+	<% end %>
+		<%= form_tag(admin_url, :method => :get) do -%>
+		<%= hidden_field_tag :form_type, "add_attachment" %>
+		<%= submit_tag 'Add Media attachment', :class => 'submit_button' %>
+	<% end %>
+		<%= form_tag(admin_url, :method => :get) do -%>
+		<%= hidden_field_tag :form_type, "applicants" %>
+		<%= submit_tag 'Applicant Listing', :class => 'submit_button' %>
+	<% end %>
+		<div class="edit_box">
+			<h5>Edit Resources:</h5>
+			<ul class="edit_list">
+				<li><%=link_to "Edit Classrooms", classrooms_url, :class => "admin_button" %></li>
+				<li><%=link_to "Edit Facilitators", facilitators_url%></li>
+				<li><%=link_to "Edit Themes", themes_url%></li>
+				<li><%=link_to "Edit Media", attachments_url%></li>
+			</ul>
+		</div>
+	</div>
+	<div class="admin_form">
+	<% if @form_type.present? %>
+		<%= render "forms/#{@form_type}" %>
+	<% end %>
 	</div>
 </div>
-
-<div class="admin_form">
-<% if @form_type.present? %>
-	<%= render "forms/#{@form_type}" %>
-<% end %>
-</div>
-
 

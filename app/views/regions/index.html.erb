@@ -12,12 +12,11 @@
   <tr>
     <td><%= region.name %></td>
     <td><%= link_to 'Show', region %></td>
-    <td><%= link_to 'Edit', edit_region_path(region) %></td>
-    <td><%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%if current_user.present? && current_user.admin? %>
+      <td><%= link_to 'Edit', edit_region_path(region) %></td>
+      <td><%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %><%end%></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Region', new_region_path %>

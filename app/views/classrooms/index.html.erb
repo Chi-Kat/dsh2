@@ -4,11 +4,24 @@
 <% @classrooms.each do |classroom| %>
   <li><h4><%= classroom.region.name %></h4>
     <%= link_to (image_tag classroom.image_url.to_s), classroom %><br>
-    <p><%#= classroom.facilitators.name %></p>  - 
+    <p><%= classroom.facilitators.name %></p>  - 
     <%= classroom.name %>
-    <%#= link_to 'Show', classroom %>
+
+	 	<% if current_user.present? && current_user.admin? %>
+		  <%= link_to "Delete Classroom", classroom, :confirm => 'Are you sure?', :method => :delete %> |
+		  <%= link_to link_to 'Edit', edit_classroom_path(classroom) %>
+		<%end%>
+
+		<% if current_user.present? && current_user.facilitator?%>
+		  <% if current_user.classroom_id == classroom.id %>
+		    <%= link_to 'Edit', edit_classroom_path(classroom) %> 
+		  <%end%>
+		<%end%>
+
+		<%end%>
+
   </li>
 <% end %>
 </ul>
-<%#= link_to 'New Classroom', new_classroom_path %>
+
 </article>

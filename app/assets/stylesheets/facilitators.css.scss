@@ -3,18 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .classcontainer {
-	width: 750px;
 	height: 1200px;
-border: 1px solid red;
 }
 
 .attachment {
-	width: 145px;
-border: 1px solid blue;		
+	width: 145px;	
 }
 
 .present {
-		width: 180px;
-	border: 1px solid blue;	
-	
+	width: 180px;
+}
+
+.admin_options {
+	width: 30%;
+	float: left;
+	padding-left:40px;
+}
+
+.admin_form {
+	width: 60%;
+	float: right;
+	margin-bottom: 100px;
+}
+
+h2 {
+	text-align: center;
 }

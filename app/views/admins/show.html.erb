@@ -1,7 +1,7 @@
 <h1>Admin Page</h1>
 
-<div id="new" style="border:1px solid">
-<%= form_tag(admin_url, :method => :get) do -%>
+<div class="admin_options">
+	<%= form_tag(admin_url, :method => :get, :class => "admin_button") do -%>
 	<%= hidden_field_tag :form_type, "add_classroom" %>
 	<%= submit_tag 'Add Classroom' %>
 <% end %>
@@ -25,21 +25,21 @@
 	<%= hidden_field_tag :form_type, "applicants" %>
 	<%= submit_tag 'Applicant Listing' %>
 <% end %>
+</div>
 
+<div class="admin_form">
 <% if @form_type.present? %>
 	<%= render "forms/#{@form_type}" %>
 <% end %>
-
-
 </div>
 
 <br>
 
-<div id="edit" style="border:1px solid">
-	<%=link_to "Edit Classroom", classrooms_url%>
-	<%=link_to "Edit Facilitator", facilitators_url%>
-	<%=link_to "Edit Theme", themes_url%>
-	<%=link_to "Edit Media", attachments_url%>
-</div>
+<ul class="edit_list">
+	<li><%=link_to "Edit Classrooms", classrooms_url, :class => "admin_button" %></li>
+	<li><%=link_to "Edit Facilitators", facilitators_url%></li>
+	<li><%=link_to "Edit Themes", themes_url%></li>
+	<li><%=link_to "Edit Media", attachments_url%></li>
+</ul>
 
 

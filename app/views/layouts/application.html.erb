@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dsh2</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Digital Schoolhouse</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 <link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	
 <div id="container">
-
 <header>
 	<nav>
         <ul>
@@ -18,7 +16,6 @@
 		
 		<!-- Link for facilitator/admin -->
 		<% if logged_in? %>
-			 
 			<% if current_user.type == "Admin" %>
 				<li><div class="button"><%= link_to "Update", admin_url(current_user.id) %></div></li>
 			<% elsif current_user.type == "Facilitator"%>
@@ -27,7 +24,6 @@
 		<% end %>
 		  
 		<!-- Log in / Log out  -->
-		
 		<% if logged_in? %>
 		<li><div class="button"><%= link_to "Logout", sessions_url, :method => :delete %></div></li>
 		<% else %>
@@ -36,19 +32,15 @@
 		<li><div class="button"><%= link_to "Join", new_applicant_url %></div></li>
 		<% end %>
 		</ul>
-			</nav>		
-			
-		<hgroup>
-		<!-- Links for all -->
-		<!-- left titles -->
-		<h1><%= link_to "Digital Schoolhouse", root_url %></h1>
-		<h3>Uniting kids in classrooms around the world.<br>
-		Celebrating culture and media literacy.</h3>
-				<div class="logo"></div>
-		</hgroup>
-		
-		
-
+	</nav>		
+	<hgroup>
+	<!-- Links for all -->
+	<!-- left titles -->
+	<h1><%= link_to "Digital Schoolhouse", root_url %></h1>
+	<h3>Uniting kids in classrooms around the world.<br>
+	Celebrating culture and media literacy.</h3>
+			<div class="logo"></div>
+	</hgroup>
 </header>
 <%= yield %>
 <footer>

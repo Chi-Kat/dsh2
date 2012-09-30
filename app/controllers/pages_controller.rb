@@ -26,21 +26,28 @@ class PagesController < ApplicationController
 	end
 
   def home
-     @attachments = Attachment.scoped
-      @attachments = @attachments.where( :theme_id =>  params["theme_id"])         unless params["theme_id"].blank?
-      @attachments = @attachments.where( :classroom_id =>  params["classroom_id"]) unless params["classroom_id"].blank?
-      @attachments = @attachments.where( :region_id =>  params["region_id"]) unless params["region_id"].blank?
-      @attachments = @attachments.order("updated_at")
+  	# @attachments = Attachment.scoped
+    # @attachments = @attachments.where( :theme_id =>  params["theme_id"])         unless params["theme_id"].blank?
+    # @attachments = @attachments.where( :classroom_id =>  params["classroom_id"]) unless params["classroom_id"].blank?
+    # @attachments = @attachments.where( :region_id =>  params["region_id"]) unless params["region_id"].blank?
+	# @attachments = @attachments.order("updated_at")
+    # @classroom_id = params["classroom_id"]
+    # @region_id = params["region_id"]
 
-      @theme_id = params["theme_id"]
-      @classroom_id = params["classroom_id"]
-      @region_id = params["region_id"]
+    @theme_of_the_month = Theme.find_by_name("Show Us Your Moves")
+    @theme_id = params["theme_id"]
+    @attachments = Attachment.scoped
+    @selected_theme_id = params["theme_id"]
+    if @selected_theme_id == nil
+    	@selected_theme_id = @theme_of_the_month.id
+    end
+ 	@current_theme = Theme.find_by_id(@selected_theme_id)
+    @array_of_classroom_ids = array_of_classroom_ids_with_selected_theme(@current_theme.id)
 
-
-      respond_to do |format|
-        format.html # index.html.erb
+   	respond_to do |format|
+    	format.html # index.html.erb
         format.json { render json: @attachments }
-      end
+    end
   end
   
 end

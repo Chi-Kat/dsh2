@@ -10,18 +10,18 @@
      
      <div class="classroom_content">
 	 <div class="class_stats">
-     <%= image_tag @classroom.map_url(:thumb).to_s%>
-     <div class="stats_box">
-     <p>Stats<%= @classroom.stat %></p>
+     <%= image_tag @classroom.map_url(:thumb).to_s%> <!--REGION IMAGE-->
+     <div class="stats_box"> <!--TEXT BOX BELOW REGION IMAGE-->
+     <h5>Stats</h5><p><%= @classroom.stat %></p>
      </div>
      </div>
 
-     <div class="class_description">
-     <p>Description<%= @classroom.description %></p>
+     <div class="class_description"><!--DESCRIPTION BOX-->
+     <h5>Description</h5><p><%= @classroom.description %></p>
      </div>
      </div>
      
-     <div class="class_image">
+     <div class="class_image"><!--CLASS ROOM IMAGE BOX-->
      <%= image_tag @classroom.image_url(:thumb).to_s%>
      </div>
 
@@ -58,5 +58,7 @@
   <%end%>
 <%end%>
 
+<div class="linkbox">
 <%= link_to 'All Classrooms', classrooms_path %>
+</div>
 </article>

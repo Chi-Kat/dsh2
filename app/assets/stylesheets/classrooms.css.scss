@@ -19,6 +19,7 @@ margin: 280px auto 0px;
 text-align: center;
 width: 100%;
 padding: 0px;
+
 }
 
 .classlist ul {
@@ -55,52 +56,106 @@ padding: 0px 0px 6px 0px;
 }
 
 /*
-show styles
+1 styles
 */
 
 #classroomstats {
 width: 99%;	
-border: 1px solid red;
 }
 
 .classroom_info {
 	width: 90%;
-	height: 300px;
-	border: 1px solid black;
+	height: 350px;
 	margin: 150px auto 0px;
 }
 
 .classroom h1 {
 width: 100%;
 text-align: center;	
-	
+}
+
+.classroom_info h1 {
+	width: 100%;
+	font:bold 18px Helvetica, sans-serif;
+	padding: 8px 0px 30px 0px;
+	margin: 0px;
 }
 
 .classroom_content {
 	float: left;
 width: 49%;	
-border: 1px solid blue;	
+	overflow:hidden;
 }
+
 
 .class_image {
 	float: right;
-width: 49%;		
-border: 1px solid green;		
+width: 49%;	
+height: 285px;	
+border: 1px solid #999;	
+	background-color: #fff;			
 }
 
 .class_description {
 	width: 49%;
+	height: 285px;
 	float: right;
-border: 1px solid gray;		
+	padding: 0px 0px 0px 0px;
+	overflow:hidden; 
+	background-color: #fff;		
+}
+
+.class_description p {
+	font:bold 14px Helvetica, sans-serif;
+	color: #ccc;		
+}
+
+.class_description h5 {
+	width: 100%;
+	font:bold 14px Helvetica, sans-serif;
+	text-align: left;
+	padding: 0px 0px 0px 0px;
+	margin-top: 6px;
+	color: #999;
+	
 }
 
 .class_stats {
 		width: 49%;
+		height: 285px;
 		float: left;
-	border: 1px solid gray;	
+			background-color: #fff;		
+}
+
+.class_stats p {
+font:bold 14px Helvetica, sans-serif;
+color: #ccc;
+}
+
+.class_stats img {
+		width: 98%;
+		height: 50%;
+		float: left;
+	background-color: #fff;		
+	margin-bottom: 8px;
+}
+
+.stats_box h5 {
+	width: 100%;
+	font:bold 14px Helvetica, sans-serif;
+	text-align: left;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	color: #999;	
 }
 
 .stats_box {
 		width: 98%;
-	border: 1px solid gray;		
+		height: 50%;	
+}
+
+.linkbox {
+	width: 120px;
+	margin-top: 30px;
+	padding: 0px 0px 0px 50px;	
 }

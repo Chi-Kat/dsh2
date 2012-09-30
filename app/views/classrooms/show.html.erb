@@ -28,18 +28,14 @@
  </div>
 
  <%Theme.all.each_with_index do |theme| %>
-<div id="theme_#{theme.id}">
+<div id="themes">
 <div id = "attachments">
   <% @classroom.attachments.each do |attachment| %>
   <div class = "attachment">
     <%if attachment.theme_id == theme.id%>
       <%=theme.name%>
-	     <%= link_to image_tag(attachment.thumbnail_url, :width => "200"), attachment_path(attachment) %>
+	     <%= link_to image_tag(attachment.thumbnail_url), attachment_path(attachment) %>
     <div class = "title"><%=attachment.title %> </div>
-    <div class = "actions">
-      <%= link_to "edit", edit_attachment_path(attachment) %> 
-      <%= link_to "remove", attachment, :confirm => 'Are you sure?', :method => :delete %>
-    </div>
     <%end%>
   </div>
   <%end%>
@@ -48,15 +44,7 @@
 </div>
 <%end%>
 
-<% if current_user.present? && current_user.admin? %>
-  <%= link_to "Delete Classroom", @classroom, :confirm => 'Are you sure?', :method => :delete %>
-<%end%>
 
-<% if current_user.present? && current_user.facilitator?%>
-  <% if current_user.classroom_id == @classroom.id %>
-    <%= link_to 'Edit', edit_classroom_path(@classroom) %> 
-  <%end%>
-<%end%>
 
 <div class="linkbox">
 <%= link_to 'All Classrooms', classrooms_path %>

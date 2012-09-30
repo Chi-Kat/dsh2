@@ -34,13 +34,20 @@
     </div>
 
   <%= link_to 'Show', attachment %>
-  <%= link_to 'Edit', edit_attachment_path(attachment) %>
-  <%= link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% if current_user.present? && current_user.facilitator?%>
+    <%if attachment.user_id = session["user_id"] %>
+      <%= link_to 'Delete', attachments, method: :delete, data: { confirm: 'Are you sure?'}%> |
+      <%= link_to 'Edit', edit_attachment_path(@attachment) %>
+    <%end%>
+  <%end%>
+
+    <%if current_user.present? && current_user.admin? %>
+      <%= link_to 'Delete', attachments, method: :delete, data: { confirm: 'Are you sure?'}%> |
+      <%= link_to 'Edit', edit_attachment_path(@attachment) %>
+    <%end%>
+  </li>
 <% end %>
 </ul>
 
 
-
 <br />
-
-<%= link_to 'New attachment', new_attachment_url %>

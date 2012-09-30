@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
 	def require_admin
 	@user = User.find_by_id(session[:user_id])
-	if @user == "Admin"
+	if @user.type == "Admin"
 	  else redirect_to root_url, notice: 'Admin access only' 
 	end
 	end

@@ -33,6 +33,8 @@
   <%end%>
 </div>
 
-
+<%if attachment.user_id = session["user_id"] %>
+    <%= link_to 'Delete', attachments, method: :delete, data: { confirm: 'Are you sure?'}%>
+    <%end%>
 <%= link_to 'Edit', edit_attachment_path(@attachment) %> |
 <%= link_to 'Back', attachments_path %>

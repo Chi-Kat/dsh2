@@ -3,6 +3,7 @@
 <ul>
 <% @themes.each do |theme| %>
   <li><%= theme.name %>
+    <%= button_to "Make current theme", :action => "falsify_all_others" %>
   <%= link_to 'Show', theme %>
   <%= link_to 'Edit', edit_theme_path(theme) %>
   <%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></li>

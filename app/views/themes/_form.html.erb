@@ -12,8 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Category" %><br />
     <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :prompt %><br />
+    <%= f.text_field :prompt %>
+  </div>
+   <div class="field">
+    <%= f.label :current_theme, "Set to current theme" %><br />
+    <%= f.check_box :current_theme %>
   </div>
   <div class="actions">
     <%= f.submit %>

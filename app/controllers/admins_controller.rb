@@ -21,10 +21,14 @@ class AdminsController < ApplicationController
     @user = User.find_by_id(session[:user_id])
     @attachment = Attachment.new
     @classroom = Classroom.new
+    @classrooms = Classroom.all
     @theme = Theme.new
     @new_user = User.new
+    @region = Region.new
+    @regions = Region.all
     @form_type = params[:form_type]
     @applicants = Applicant.all
+
 
     respond_to do |format|
       format.html # show.html.erb

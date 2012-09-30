@@ -36,11 +36,65 @@
 <% end %>
 </div>
 
-
-
-
-
-
 <br />
 
 <%= link_to 'New attachment', new_attachment_url %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+
+<section id="content">
+
+<hgroup class="theme">
+<h5>Theme of the Month:</h5>
+<h1> "<%= @theme_of_the_month.name %>!" </h1>
+</hgroup>
+
+
+<!---------------------------Copy code below the hgroup----------------------->
+
+
+<article id="homepage">
+<ul>
+
+<% @array_of_classroom_ids.each do |classroom_id| %>
+    <% link_to Classroom.find_by_id(classroom_id).name, classroom_url(classroom_id) %>
+    (<% link_to Region.find_by_id(Classroom.find(classroom_id).region_id).name, region_url(Classroom.find(classroom_id).region_id) %>)
+    <% attachments = @attachments.where( :theme_id =>  @current_theme.id) %>
+    <% attachments = @attachments.where( :classroom_id =>  classroom_id) %>
+    <% attachments.each do |attachment| %>
+      <li>
+        <% link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
+        <% attachment.title %>
+        <% link_to 'Edit', edit_attachment_path(attachment) %>
+        <% link_to 'Destroy', attachment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <img src="<%= attachment.thumbnail_url %>" width="200" height="140" 
+        title="#{<%= attachment.classroom.name %>}" 
+        class="media">
+        <p><%= attachment.classroom.name %><br>("<%= attachment.classroom.region.name %>")</p>
+      </li>
+    <% end %>
+<% end %>
+
+
+
+
+</ul>
+</article>
+
+<!---------------------------And above the Span----------------------->
+
+<span>
+<%= yield %>
+</span>
+
+</section>
+</body>
+</html>

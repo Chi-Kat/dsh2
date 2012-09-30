@@ -1,3 +1,5 @@
+
+
 <%= form_for(@theme) do |f| %>
   <% if @theme.errors.any? %>
     <div id="error_explanation">
@@ -15,8 +17,13 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :prompt %><br />
+    <%= f.text_field :prompt %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
 

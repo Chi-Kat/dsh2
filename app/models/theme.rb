@@ -3,6 +3,14 @@ class Theme < ActiveRecord::Base
 
   has_many :attachments
 
+  def current_theme?
+  	if self.current_theme == true
+  		return true
+  	else
+  		return false
+  	end
+  end
+
   
   
 end

@@ -1,6 +1,6 @@
 Dsh2::Application.routes.draw do
 
-  match '/current_theme' => "themes#falsify_all_others"
+  get '/current_theme/:id' => "themes#current_theme_selector", :as => :current_theme
 
   resources :admins
 
@@ -27,6 +27,7 @@ Dsh2::Application.routes.draw do
   get '/attachments/new' => 'attachments#new', :as => :new_attachment
 
   get '/about' => 'pages#about', :as => :about
+
   # get '/admin' => 'pages#admin', :as => :admin
   # get '/facilitator' => 'pages#facilitator', :as => :facilitator
 

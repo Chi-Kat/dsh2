@@ -23,6 +23,7 @@ class AdminsController < ApplicationController
     @classroom = Classroom.new
     @classrooms = Classroom.all
     @theme = Theme.new
+    @themes = Theme.all
     @new_user = User.new
     @region = Region.new
     @regions = Region.all

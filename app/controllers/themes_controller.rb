@@ -1,17 +1,23 @@
-class ThemesController < ApplicationController
+ class ThemesController < ApplicationController
 
 before_filter :require_admin, :except => [:index, :show]
 
-  def falsify_all_others
-    self.current_theme = true
-    @themes = Theme.all
-      @themes.each do |theme|
-        if theme.id != self.id
-          theme.current_theme = false
-          theme.save
-        end
-      end
+def current_theme_selector
+  @theme = Theme.find(params[:id])
+  @themes = Theme.all
+  
+  @theme.current_theme = true
+  @theme.save
+
+  @themes.each do |theme|
+    if theme.id != @theme.id
+      theme.current_theme = false
+      theme.save
+    end
   end
+  
+  redirect_to themes_url
+end
 
   def current_user
     User.find_by_id(session["user_id"])

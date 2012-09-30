@@ -3,10 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Category</th>
-    <th>Prompt</th>
-    <th>Date</th>
-    <th></th>
+    <th>Current Theme</th>
     <th></th>
     <th></th>
   </tr>
@@ -14,9 +11,11 @@
 <% @themes.each do |theme| %>
   <tr>
     <td><%= theme.name %></td>
-    <td><%= theme.name %></td>
-    <td><%= theme.name %></td>
-    <td><%= theme.name %></td>
+    <% if theme.current_theme? %>
+      <td><%= "Selected" %></td>
+    <% else %>
+      <td><%= link_to "Select", current_theme_path(theme.id) %></td>
+    <% end %>
     <td><%= link_to 'Show', theme %></td>
     <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
     <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,21 +31,17 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Category</th>
-    <th>Prompt</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @theme_suggestions.each do |theme_suggestion| %>
+<% @theme_suggestions.each do |theme| %>
   <tr>
-    <td><%= theme.name %></td>
-    <td><%= theme.name %></td>
     <td><%= theme.name %></td>
     <td><%= link_to 'Show', theme %></td>
     <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-<%if theme_suggestion.user_id = session["user_id"] %>
+<%if theme.user_id = session["user_id"] %>
     <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <%end%>
   </tr>

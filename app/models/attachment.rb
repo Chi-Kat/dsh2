@@ -27,10 +27,10 @@ class Attachment < ActiveRecord::Base
               end
           end
         end
-        return "http://img.youtube.com/vi/#{id}/1.jpg"
+        return "http://img.youtube.com/vi/#{id}/0.jpg"
       elsif domain.include?("youtu.be")
           id = link.split('/').last
-          return  "http://img.youtube.com/vi/#{id}/1.jpg"
+          return  "http://img.youtube.com/vi/#{id}/0.jpg"
       end
 
   end

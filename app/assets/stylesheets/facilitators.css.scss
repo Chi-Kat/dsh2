@@ -16,12 +16,11 @@
 
 .admin_options {
 	width: 30%;
-	float: left;
-	padding-left:40px;
+	margin-left: 40px;
+	display: inline-block;
 }
 
 .admin_form {
 	width: 60%;
-	float: right;
 	margin-bottom: 100px;
 }

@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <div class="theme_select">
-  <h5>Theme of the month:</h5>
+  <h5>Theme For %= @theme.date %</h5>
   <h1>"<%= @theme_of_the_month.name %>!"</h1>
   <%= form_tag(root_url, :method => :get) do -%>
 <% if @theme_id.present?%>

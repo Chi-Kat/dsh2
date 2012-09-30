@@ -133,6 +133,8 @@ Page Nav and Menu
 nav {
 	float: right;
 	width: 30%;
+	text-align: center;
+	color: #3093c7;
 }
 
 nav li {
@@ -180,6 +182,10 @@ nav li:hover {
 	 background-image: -ms-linear-gradient(top, #d4dee1, #a9c0c8);
 	 background-image: -o-linear-gradient(top, #d4dee1, #a9c0c8);
 	 background-image: linear-gradient(top, #d4dee1, #a9c0c8);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d4dee1, endColorstr=#a9c0c8);
+}
+
+nav p {
+	margin-top: 10px;
 }
 					
 /*
@@ -347,5 +353,8 @@ applicants styles: applicants css file not present in assets folder, inserting s
 	padding: 0px 0px 16px 0px;
 }
 
+#email, #password {
+	width: 160px;
+}
 
 

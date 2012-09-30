@@ -2,6 +2,7 @@
 
 <div class="admin_options">
 	<p>Add Resources:</p>
+
 	<%= form_tag(admin_url, :method => :get, :class => "admin_button") do -%>
 	<%= hidden_field_tag :form_type, "add_classroom" %>
 	<%= submit_tag 'Add Classroom' %>
@@ -26,6 +27,7 @@
 	<%= hidden_field_tag :form_type, "applicants" %>
 	<%= submit_tag 'Applicant Listing' %>
 <% end %>
+
 	<div class="edit_box">
 		<p>Edit Resources:</p>
 		<ul class="edit_list">
@@ -42,7 +44,5 @@
 	<%= render "forms/#{@form_type}" %>
 <% end %>
 </div>
-
-<br>
 
 

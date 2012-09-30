@@ -1,35 +1,62 @@
 <h1>Themes</h1>
 
-<ul>
-<% @themes.each do |theme| %>
-  <li><%= theme.name %>
-  <%= link_to 'Show', theme %>
-  <%= link_to 'Edit', edit_theme_path(theme) %>
-  <%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-<% end %>
-</ul>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Prompt</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<br />
+<% @themes.each do |theme| %>
+  <tr>
+    <td><%= theme.name %></td>
+    <td><%= theme.name %></td>
+    <td><%= theme.name %></td>
+    <td><%= theme.name %></td>
+    <td><%= link_to 'Show', theme %></td>
+    <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
+    <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
 
 <%#= link_to 'New Theme', new_theme_path %>
 
 
 <h1>Suggested Themes</h1>
 
-<ul>
-<% @theme_suggestions.each do |theme_suggestion| %>
-<li><%= theme_suggestion.name %>
-  <%if theme_suggestion.user_id = session["user_id"] %>
-    <%= link_to 'Delete', theme_suggestion, method: :delete, data: { confirm: 'Are you sure?'}%>
-    <%end%>
-  </li>
-<%end%>
-</ul>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Prompt</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<br />
+<% @theme_suggestions.each do |theme_suggestion| %>
+  <tr>
+    <td><%= theme.name %></td>
+    <td><%= theme.name %></td>
+    <td><%= theme.name %></td>
+    <td><%= link_to 'Show', theme %></td>
+    <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
+<%if theme_suggestion.user_id = session["user_id"] %>
+    <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%end%>
+  </tr>
+<% end %>
+</table>
+
+<div class="theme_suggestion">
 <%= form_for(@theme_suggestion) do |f| %>
   <div class="field">
-    <%= f.label :name, "New Suggestion"%><br />
+    <%= f.label :name, "New Suggestion"%><br/>
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -39,3 +66,4 @@
     <%= f.submit "Submit"%>
   </div>
 <% end %>
+</div>

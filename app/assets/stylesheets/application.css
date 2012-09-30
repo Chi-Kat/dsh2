@@ -316,6 +316,7 @@ h5 {
 	font: bold 15px Helvetica, sans-serif;
 	color: #666;		
 	text-align: center;
+	margin-bottom: 2%;
 }
 
 .description p {
@@ -355,6 +356,10 @@ applicants styles: applicants css file not present in assets folder, inserting s
 
 #email, #password {
 	width: 160px;
+}
+
+table {
+	margin: 1% 4% 1% 4%;
 }
 
 

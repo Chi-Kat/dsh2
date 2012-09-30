@@ -3,11 +3,11 @@
 <div class="theme_select">
   <h5>Theme of the month:</h5>
   <h1>"<%= @theme_of_the_month.name %>!"</h1>
-    <%= form_tag(root_url, :method => :get) do -%>
+  <%= form_tag(root_url, :method => :get) do -%>
 <% if @theme_id.present?%>
-    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
+  <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
 <% else %>
-    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "See Previous Themes"%>
+  <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "See Previous Themes"%>
 <% end %>
   <%= submit_tag 'Filter' %>
   <%= link_to 'clear', root_url %>
@@ -17,20 +17,20 @@
 <div id="attachments">
 <% @array_of_classroom_ids.each do |classroom_id| %>
   <ul>
-    <li class="classroom_link">
+    <h3>
       <%= link_to Classroom.find_by_id(classroom_id).name, classroom_url(classroom_id) %>
-    </li>
-    <li class="region_link">
+    </h3>
+    <h3>
       (<%= link_to Region.find_by_id(Classroom.find(classroom_id).region_id).name, region_url(Classroom.find(classroom_id).region_id) %>)
-    </li>
+    </h3>
 <% attachments = @attachments.where( :theme_id =>  @current_theme.id) %>
 <% attachments = @attachments.where( :classroom_id =>  classroom_id) %>
 <% attachments.each do |attachment| %>
     <li>
       <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
-    </li>
-    <li>
-      <%= attachment.title %>
+      <h5>
+        <%= attachment.title %>
+      </h5>
     </li>
 <% end %>
   </ul>

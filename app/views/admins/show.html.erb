@@ -7,22 +7,22 @@
 	<%= submit_tag 'Add Classroom' %>
 <% end %>
 
-	<%= form_tag(admin_url, :method => :get) do -%>
-	<%= hidden_field_tag :form_type, "add_user" %>
-	<%= submit_tag 'Add User' %>
+<%= form_tag(admin_url, :method => :get) do -%>
+	<%= hidden_field_tag :form_type, "add_region" %>
+	<%= submit_tag 'Add Region' %>
 <% end %>
 
-	<%= form_tag(admin_url, :method => :get) do -%>
+<%= form_tag(admin_url, :method => :get) do -%>
 	<%= hidden_field_tag :form_type, "add_theme" %>
 	<%= submit_tag 'Create Theme Challenge' %>
 <% end %>
 
-	<%= form_tag(admin_url, :method => :get) do -%>
+<%= form_tag(admin_url, :method => :get) do -%>
 	<%= hidden_field_tag :form_type, "add_attachment" %>
 	<%= submit_tag 'Add Media attachment' %>
 <% end %>
 
-	<%= form_tag(admin_url, :method => :get) do -%>
+<%= form_tag(admin_url, :method => :get) do -%>
 	<%= hidden_field_tag :form_type, "applicants" %>
 	<%= submit_tag 'Applicant Listing' %>
 <% end %>

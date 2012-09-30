@@ -1,29 +1,28 @@
 <div id="loginbox">
 <h1>Sign In </h1>
-
 <p id="notice"><%= notice %></p>
 
 <%= form_tag sessions_url do %>
-
 <div class="input">
 	<p><%= label_tag :email %></p>
 	<div class="field">
-
 		<%= text_field_tag :email %>
 	</div>
-</div><!--input end-->
-	
+</div>
+<!--input end-->	
 <div class="input">
 	<p><%= label_tag :password %></p>
 	<div class="field">
 		<%= password_field_tag :password %>
 	</div>
-</div><!--input end-->
-
-	<div class="submitbox">
+</div>
+<!--input end-->
+<div class="submitbox">
 	<div class="actions">
 		<%= submit_tag 'Sign In' %>
 	</div>
-	</div><!--submitbox end-->
+</div>
+<!--submitbox end-->
 <%end%>
-</div><!--formcontent end-->
+</div>
+<!--formcontent end-->

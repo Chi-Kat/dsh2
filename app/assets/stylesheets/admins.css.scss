@@ -1,13 +1,14 @@
 .admin_options {
 	width: 30%;
-	float: left;
-	padding-left:40px;
+	margin-left: 4%;
+	border: 1px solid black;
 }
 
 .admin_form {
 	width: 60%;
-	float: right;
 	margin-bottom: 100px;
+	border: 1px solid black;
+	float: right;
 }
 
 .admin_button {
@@ -21,13 +22,22 @@ li {
 	display: inline-block;
 }
 
-.edit_list {
-	width: 130px;
-	float: left;
-	padding-left: 40px;
-}
 
 h1 {
-	text-align: center;
-	
+	margin-left: 4%;
+}
+
+.edit_list {
+	width: 130px;
+}
+
+.edit_box {
+	width: 200px;
+	height: 200px;
+	border: 1px solid black;
+	margin-top: 20px;
+}
+
+p {
+	margin-bottom: 5px;
 }

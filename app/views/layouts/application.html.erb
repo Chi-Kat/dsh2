@@ -11,42 +11,53 @@
 <div id="container">
 <header>
 	<nav>
-        <ul>
-        <li><div class="button"><%= link_to "About", about_url %></div></li>
-		
-		<!-- Link for facilitator/admin -->
-		<% if logged_in? %>
-			<% if current_user.type == "Admin" %>
-				<li><div class="button"><%= link_to "Update", admin_url(current_user.id) %></div></li>
-			<% elsif current_user.type == "Facilitator"%>
-				<li><div class="button"><%= link_to "Post New", facilitator_url(current_user.id) %></div></li>
-			<% end %>
-		<% end %>
-		  
-		<!-- Log in / Log out  -->
-		<% if logged_in? %>
-		<li><div class="button"><%= link_to "Logout", sessions_url, :method => :delete %></div></li>
-		<% else %>
-		<li><div class="button"><%= link_to "Login", new_sessions_url %></div></li>
-			
-		<li><div class="button"><%= link_to "Join", new_applicant_url %></div></li>
-		<% end %>
+    <ul>
+      <li>
+      	<%= link_to "About", about_url %>
+      </li>
+<!-- Link for facilitator/admin -->
+<% if logged_in? %>
+<% if current_user.type == "Admin" %>
+			<li>
+				<%= link_to "Update", admin_url(current_user.id) %>
+			</li>
+<% elsif current_user.type == "Facilitator"%>
+			<li>
+				<%= link_to "Post New", facilitator_url(current_user.id) %>
+			</li>
+<% end %>
+<% end %> 
+<!-- Log in / Log out  -->
+<% if logged_in? %>
+			<li>
+				<%= link_to "Logout", sessions_url, :method => :delete %>
+			</li>
+<% else %>
+			<li>
+				<%= link_to "Login", new_sessions_url %>
+			</li>			
+			<li>
+				<%= link_to "Join", new_applicant_url %>
+			</li>
+<% end %>
 		</ul>
+		<p id="notice"><%= notice %></p>
 	</nav>		
 	<hgroup>
-	<!-- Links for all -->
-	<!-- left titles -->
-	<h1><%= link_to "Digital Schoolhouse", root_url %></h1>
-	<h3>Uniting kids in classrooms around the world.<br>
+<!-- Links for all -->
+<!-- left titles -->
+		<h1><%= link_to "Digital Schoolhouse", root_url %></h1>
+		<h3>Uniting kids in classrooms around the world.<br>
 	Celebrating culture and media literacy.</h3>
-			<div class="logo"></div>
+		<div class="logo"></div>
 	</hgroup>
 </header>
 <%= yield %>
+
 <footer>
 	<p>Digital School House 2012 &reg</p>
 </footer>
-</div><!--CONTAINER END-->
-
+</div>
+<!--CONTAINER END-->
 </body>
 </html>

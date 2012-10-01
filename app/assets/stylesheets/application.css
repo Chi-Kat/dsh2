@@ -376,3 +376,21 @@ table {
 	width: 500px;
 	height: 200px;
 }
+
+/*
+Region table styles
+*/
+
+.facilitators_box {
+width: 100%;
+}
+
+.facilitators_box h1 {
+	width: 100%;
+	font-family: Helvetica, sans-serif;
+	font-weight:bold;
+	font-size: 18px;
+	text-align: center;	
+	margin-bottom: 12px;
+	color: #999;
+}

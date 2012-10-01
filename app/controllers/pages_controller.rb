@@ -33,8 +33,8 @@ class PagesController < ApplicationController
 	# @attachments = @attachments.order("updated_at")
     # @classroom_id = params["classroom_id"]
     # @region_id = params["region_id"]
-
-    @theme_of_the_month = Theme.find_by_name("Show Us Your Moves")
+    
+    @theme_of_the_month = Theme.find_by_current_theme(true)
     @theme_id = params["theme_id"]
     @attachments = Attachment.scoped
     @selected_theme_id = params["theme_id"]

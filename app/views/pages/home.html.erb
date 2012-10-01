@@ -1,6 +1,6 @@
 <div class="theme_select">
   <h5>Theme For %= @theme.date %</h5>
-  <h1>"<%= Theme.find_by_current_theme(true).name %>!"</h1>
+  <h1>"<%= @theme_of_the_month.name %>!"</h1>
   <%= form_tag(root_url, :method => :get) do -%>
 <% if @theme_id.present?%>
   <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>

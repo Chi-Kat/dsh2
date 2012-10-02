@@ -82,7 +82,7 @@ puts 'adding themes'
 Theme.destroy_all
 
 themes = [
-          {:name => 'Classroom', :prompt => 'Show us your classroom!', :current_theme => false},
+          {:name => 'Classroom', :prompt => 'Show us your classroom!', :current_theme => true},
           {:name => 'Sports', :prompt => 'What sports do you play?', :current_theme => false},
           {:name => 'Music', :prompt => 'Play us some music!', :current_theme => false},
           {:name => 'Dance', :prompt => 'Show us your moves!', :current_theme => false},
@@ -90,7 +90,9 @@ themes = [
          ]
         
 themes.each do |theme|     
-  Theme.create name: theme[:name]
+  Theme.create name: theme[:name],
+               prompt: theme[:prompt],
+               current_theme: theme[:current_theme] 
 end
 
 # puts 'adding attachments'

@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   		end
 	end
 
-	def array_of_classroom_ids_with_selected_theme(theme_id)
+	def array_of_classroom_ids_by_theme_id(theme_id)
 		classrooms_array = []
 		classrooms = Classroom.all
 		classrooms.each do |classroom|
@@ -58,7 +58,28 @@ class ApplicationController < ActionController::Base
 				classrooms_array.push classroom.id
 			end
 		end
+
 		return classrooms_array
+	end
+
+	def array_of_last_updated_attachment_per_classroom_by_theme_id(theme_id)
+		classrooms_array = []
+		classrooms = Classroom.all
+		classrooms.each do |classroom|
+			attachments = Attachment.scoped
+			attachments = attachments.where(:theme_id => theme_id)
+			if attachments.find_by_classroom_id(classroom.id) != nil
+				classrooms_array.push classroom.id
+			end
+		end
+		attachments_array = []
+		attachments = Attachment.scoped
+		attachments = attachments.where(:theme_id => theme_id)
+		classrooms_array.each do |classroom_id|
+			attachments_array.push attachments.order('created_at DESC').find_all_by_classroom_id(classroom_id).last
+		end
+
+		return attachments_array
 	end
 	
 end

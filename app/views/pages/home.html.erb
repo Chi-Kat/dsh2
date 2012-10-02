@@ -13,24 +13,20 @@
 </div>
 
 <div id="attachments">
-<% @array_of_classroom_ids.each do |classroom_id| %>
+<% @array_of_last_updated_attachment_per_classroom_by_theme_id.each do |attachment| %>
   <ul>
     <h3>
-      <%= link_to Classroom.find_by_id(classroom_id).name, classroom_url(classroom_id) %>
+      <%= link_to attachment.classroom.name, classroom_url(attachment.classroom.id) %>
     </h3>
     <h3>
-      (<%= link_to Region.find_by_id(Classroom.find(classroom_id).region_id).name, region_url(Classroom.find(classroom_id).region_id) %>)
+      (<%= link_to attachment.region.name, region_url(attachment.region.id) %>)
     </h3>
-<% attachments = @attachments.where( :theme_id =>  @current_theme.id) %>
-<% attachments = @attachments.where( :classroom_id =>  classroom_id) %>
-<% attachments.each do |attachment| %>
     <li>
       <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
       <h5>
         <%= attachment.title %>
       </h5>
     </li>
-<% end %>
   </ul>
 <% end %>
 </div>

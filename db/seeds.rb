@@ -31,7 +31,7 @@ Classroom.destroy_all
 
 classrooms = [ 
               {:name => 'Meeting Point Kampala', :region_id => Region.find_by_name('Uganda').id},
-              {:name => 'Huay Puung Mai', :region_id => Region.find_by_name('Thailand').id},
+              {:name => 'Huay Puung Mai',        :region_id => Region.find_by_name('Thailand').id},
               {:name => 'Khe Sanh',              :region_id => Region.find_by_name('Vietnam').id},
               {:name => 'Project Cambodia',      :region_id => Region.find_by_name('Cambodia').id},
               {:name => 'Project Honduras',      :region_id => Region.find_by_name('Honduras').id}
@@ -82,11 +82,11 @@ puts 'adding themes'
 Theme.destroy_all
 
 themes = [
-          {:name => 'Classroom'},
-          {:name => 'Sports'},
-          {:name => 'Music'},
-          {:name => 'Show Us Your Moves'},
-          {:name => 'Food'}
+          {:name => 'Classroom', :prompt => 'Show us your classroom!', :current_theme => false},
+          {:name => 'Sports', :prompt => 'What sports do you play?', :current_theme => false},
+          {:name => 'Music', :prompt => 'Play us some music!', :current_theme => false},
+          {:name => 'Dance', :prompt => 'Show us your moves!', :current_theme => false},
+          {:name => 'Food', :prompt => "What's for lunch?", :current_theme => false}
          ]
         
 themes.each do |theme|     

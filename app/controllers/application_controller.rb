@@ -62,6 +62,20 @@ class ApplicationController < ActionController::Base
 		return classrooms_array
 	end
 
+	def array_of_classrooms_by_theme_id(theme_id)
+		classrooms_array = []
+		classrooms = Classroom.all
+		classrooms.each do |classroom|
+			attachments = Attachment.scoped
+			attachments = attachments.where(:theme_id => theme_id)
+			if attachments.find_by_classroom_id(classroom.id) != nil
+				classrooms_array.push classroom
+			end
+		end
+
+		return classrooms_array
+	end
+
 	def array_of_last_updated_attachment_per_classroom_by_theme_id(theme_id)
 		classrooms_array = []
 		classrooms = Classroom.all

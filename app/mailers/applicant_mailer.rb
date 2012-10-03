@@ -12,7 +12,7 @@ class ApplicantMailer < ActionMailer::Base
     	@applicant = applicant
     	@applicants = Applicant.all
 
-    	mail to: "digitalschoolhouse@gmail.com", subject: "New Applicant"
+    	mail to: "adam.lupu@globalplayground.org", subject: "New Applicant"
   	end
 
   	def application_termination(applicant)

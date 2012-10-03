@@ -30,7 +30,7 @@ end
   end
   
   def index
-    @themes = Theme.all
+    @themes = Theme.order('created_at').all
     @theme_suggestions = ThemeSuggestion.all
     @theme_suggestion = ThemeSuggestion.new
 

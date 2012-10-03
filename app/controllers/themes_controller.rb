@@ -23,11 +23,7 @@ end
     User.find_by_id(session["user_id"])
   end
   
-  def require_admin
-    if current_user.type == "Admin"
-    else redirect_to root_url, notice: 'Admin access only' 
-    end
-  end
+
   
   def index
     @themes = Theme.order('created_at').all

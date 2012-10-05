@@ -11,12 +11,12 @@
 <% @themes.each do |theme| %>
   <tr>
     <td><%= theme.name %></td>
-    <% if theme.current_theme? %>
-      <td><%= "Selected" %></td>
-    <% else %>
-      <td><%= link_to "Select", current_theme_path(theme.id) %></td>
-    <% end %>
-    <td><%= link_to 'Show', theme %></td>
+    <td>
+      <% if theme.current_theme? %>
+        <%= "Selected" %>
+      <% else %><%= link_to "Select", current_theme_path(theme.id) %>
+      <% end %>
+    </td>
     <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
     <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
@@ -33,17 +33,13 @@
     <th>Name</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @theme_suggestions.each do |theme| %>
   <tr>
     <td><%= theme.name %></td>
-    <td><%= link_to 'Show', theme %></td>
-    <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-<%if theme.user_id = session["user_id"] %>
+    <td><%= link_to 'Edit', edit_theme_suggestion_path(theme) %></td>
     <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<%end%>
   </tr>
 <% end %>
 </table>

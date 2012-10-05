@@ -26,11 +26,14 @@
 </p>
 
 <div id = "attachments">
-  <% if @attachment.image? %>
+  <% if @attachment.format? == "image" %>
     <%= image_tag @attachment.image_url.to_s %>
-  <%else%>
+  <%elsif @attachment.format? == "youtube"%>
     <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(@attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
+  <% else %>
+    <%= image_tag "logo.jpg" %>   
   <%end%>
 </div>
+
 
 <%= link_to 'Back to all attachments', attachments_path %>

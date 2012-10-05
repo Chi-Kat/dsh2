@@ -1,6 +1,7 @@
  class ThemesController < ApplicationController
 
-before_filter :require_admin, :except => [:index, :show]
+before_filter :require_login, :except => [:index, :show]
+before_filter :require_admin, :only => [:delete]
 
 def current_theme_selector
   @theme = Theme.find(params[:id])

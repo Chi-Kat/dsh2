@@ -1,4 +1,9 @@
 class FacilitatorsController < ApplicationController
+
+  before_filter :require_login
+  before_filter :require_admin, :only => [:delete, :new, :create]
+  
+
   # GET /facilitators
   # GET /facilitators.json
   def index

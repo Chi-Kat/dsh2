@@ -14,14 +14,10 @@
     <%else%>
 	    <%= link_to image_tag("youtube.png", :width => "200"), attachment_path(attachment) %>
     <%end%>
-    <div class = "actions">
-      <%= link_to "edit", edit_attachment_path(attachment) %> 
-      <%= link_to "remove", attachment, :confirm => 'Are you sure?', :method => :delete %>
-    </div>
   </div>
   <%end%>
   <div class = "clear"></div>
 
 </div>
 
-<%= link_to 'Back', themes_path %>
+<%= link_to 'Back to all themes', themes_path %>

@@ -3,6 +3,7 @@
 		<%= @classroom.name %>
 		<%= "(#{@region.name})" %>
 	</h2>
+	<%if current_user.id = params["id"]%>
 	<div class="admin_options">
 		<div class="attachment">
 			<%= form_tag(facilitator_url, :method => :get) do -%>
@@ -24,4 +25,5 @@
 			<% end %>
 		</div>
 	</div>
+	<%end%>
 </article>

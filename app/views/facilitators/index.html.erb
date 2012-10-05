@@ -15,12 +15,11 @@
   <tr>
     <td><%= facilitator.name %></td>
     <td><%= facilitator.email %></td>
-    <td><%= facilitator.image %></td>
-    <td><%= link_to 'Show', facilitator %></td>
-    <%if current_user.present? && current_user.admin? %>
-    <td><%= link_to 'Edit', edit_facilitator_path(facilitator) %></td>
-    <td><%= link_to 'Destroy', facilitator, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%end%></td>
+    <td><%= facilitator.image  %></td>
+    <%if current_user.admin? %>
+      <td><%= link_to 'Edit', edit_facilitator_path(facilitator) %></td>
+      <td><%= link_to 'Destroy', facilitator, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%></td>
   </tr>
 <% end %>
 </table>

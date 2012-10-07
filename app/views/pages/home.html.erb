@@ -14,26 +14,24 @@
 <% end %>
 </div>
 
-<div id="attachments">
-<% @array_of_last_updated_attachment_per_classroom_by_theme_id.each do |attachment| %>
+<!-- <div id="attachments">
+<#% @array_of_last_updated_attachment_per_classroom_by_theme_id.each do |attachment| %>
   <ul>
     <h3>
-      <%= link_to attachment.classroom.name, classroom_url(attachment.classroom.id) %>
+      <#%= link_to attachment.classroom.name, classroom_url(attachment.classroom.id) %>
     </h3>
     <h3>
-      (<%= link_to attachment.region.name, region_url(attachment.region.id) %>)
+      (<#%= link_to attachment.region.name, region_url(attachment.region.id) %>)
     </h3>
     <li>
-      <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
+      <#%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
       <h5>
-        <%= attachment.title %>
+        <#%= attachment.title %>
       </h5>
     </li>
   </ul>
-<% end %>
-</div>
-
-<br> </br>
+<#% end %>
+</div> -->
 
 <div id="attachments">
 <% @array_of_classrooms_by_theme_id.each do |classroom| %>
@@ -44,12 +42,12 @@
     <h3>
       (<%= link_to classroom.region.name, region_url(classroom.region.id) %>)
     </h3>
-    <li>
       <% array_of_attachments_by_theme_id_and_classroom_id(@current_theme.id, classroom.id).each do |attachment| %>
-        <h5><%= attachment.title %></h5>
-        <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
-      <% end %>
+    <li>    
+      <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
+      <h5><%= attachment.title %></h5>
     </li>
+    <% end %>
   </ul>
 <% end %>
 </div>

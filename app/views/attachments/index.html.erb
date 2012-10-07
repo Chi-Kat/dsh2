@@ -25,25 +25,27 @@
 
 <ul><% @attachments.each do |attachment| %>
     <div id = "attachments">
-      <% if attachment.image? %>
+      <% if attachment.format? == "image" %>
         <%= image_tag attachment.image_url(:thumb).to_s %>
-      <%else%>
+        <%= attachment.title %>
+      <% elsif attachment.format? == "youtube" %>
         <iframe width="560" height="315" src="http://www.youtube.com/embed/<%=shorten(attachment.youtube_url)%>" frameborder="0" allowfullscreen></iframe>
+        <%= attachment.title %>
       <%end%>
-      <%= attachment.title %><br>
+      
     </div>
 
-  <%= link_to 'Show', attachment %>
+  <%= link_to 'Show', attachment %> |
   <% if current_user.present? && current_user.facilitator?%>
     <%if attachment.user_id = session["user_id"] %>
-      <%= link_to 'Delete', attachments, method: :delete, data: { confirm: 'Are you sure?'}%> |
+      <%= link_to 'Delete', attachment, method: :delete, data: { confirm: 'Are you sure?'}%> |
       <%= link_to 'Edit', edit_attachment_path(@attachment) %>
     <%end%>
   <%end%>
 
     <%if current_user.present? && current_user.admin? %>
-      <%= link_to 'Delete', attachments, method: :delete, data: { confirm: 'Are you sure?'}%> |
-      <%= link_to 'Edit', edit_attachment_path(@attachment) %>
+      <%= link_to 'Delete', attachment, method: :delete, data: { confirm: 'Are you sure?'}%> |
+      <%= link_to 'Edit', edit_attachment_path(attachment) %>
     <%end%>
   </li>
 <% end %>

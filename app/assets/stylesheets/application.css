@@ -244,7 +244,6 @@ Home Page Attachments styling
 }
 	
 #attachments ul {
-	width: 32%;
 	border: 1px solid black;
 	margin: 5px 2px;
 	text-align: center;
@@ -263,6 +262,8 @@ Home Page Attachments styling
 	text-align: center;
 	border-radius: 8px;
 	background-color: #FFEFD5;
+	display: inline-block;
+	float: left;
 }
 
 #attachments ul h3 a {

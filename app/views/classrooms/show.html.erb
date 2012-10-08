@@ -31,16 +31,18 @@
 
 <div id="theme">
   <div id = "attachments">
+    <ul class = "classroomAttachmentsByTheme"><!--MEDIA PLACEHOLDER-->
+        <h3><%=theme.name%></h3>
 <% @classroom.attachments.each do |attachment| %>
-    <div class = "attachment"><!--MEDIA PLACEHOLDER-->
-<%if attachment.theme_id == theme.id%>
-<%=theme.name%>
+<% if attachment.theme_id == theme.id%>
+        <li> 
 <%= link_to image_tag(attachment.thumbnail_url, :width => "200"), attachment_path(attachment) %><!--THUMB PLACEHOLDER-->
-      <div class = "title"><%=attachment.title %><!--MEDIA TITLE-->
-      </div>
+            <div class = "title"><%=attachment.title %><!--MEDIA TITLE-->
+            </div>
 <%end%>
-    </div>
+        </li>
 <%end%>
+    </ul>
     <div class = "clear"></div>
   </div>
 </div>

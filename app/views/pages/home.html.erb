@@ -1,8 +1,12 @@
-
 <div class="theme_select">
-  <h5>Theme For <%= Time.now.strftime("%B")%>:</h5>
-  <h1><%= @theme_of_the_month.name %>!</h1>
-  <br></br>
+<% if @selected_theme.present?%>
+  <h5><%= @selected_theme.prompt %></h5>
+<% else %>
+  <h5>
+    Theme Of The Month: <%= @theme_of_the_month.name %>
+  </h5>
+  <h5><%= @theme_of_the_month.prompt %></h5>
+<% end %>
   <%= form_tag(root_url, :method => :get) do -%>
 <% if @selected_theme.present?%>
   <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name, @selected_theme.id)%>

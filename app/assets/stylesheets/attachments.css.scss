@@ -1,3 +1,33 @@
 // Place all the styles related to the Attachments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#attachmentbox {
+	width: 70%;
+	margin: auto;
+}
+
+#attachmentsbox {
+	margin: auto;
+	width: 85%;
+}
+
+.mediainfo {
+	width: 56%;
+	margin: 16px auto 80px;
+}
+
+.mediainfo p {
+	font: normal 14px Helvetica, sans-serif;	
+	text-align: center;
+}
+
+.mediainfo b {
+	font: bold 14px Helvetica, sans-serif;	
+	color: #666;
+}
+
+.linkbox {
+
+}

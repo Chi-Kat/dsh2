@@ -243,7 +243,7 @@ Home Page Attachments styling
 	margin: 10px auto;
 }
 	
-#attachments ul {
+#attachments ul, .classroomPosts {
 	border: 1px solid black;
 	margin: 5px 2px;
 	text-align: center;
@@ -253,7 +253,7 @@ Home Page Attachments styling
 	background-color: #DDA0DD;
 }
 		
-#attachments ul li {
+#attachments ul li, #attachmentsContainer ul li {
 	padding: 12px 12px;
 	margin: 10px;
 	list-style: none;
@@ -410,3 +410,13 @@ width: 100%;
 	margin-bottom: 12px;
 	color: #999;
 }
+
+/*
+Masonry styles
+*/
+
+.classroomPosts {
+	width: 286px;
+	float: left;
+}
+

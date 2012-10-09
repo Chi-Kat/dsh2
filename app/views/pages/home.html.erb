@@ -40,18 +40,29 @@ $(function(){
       <h3>
         (<%= link_to classroom.region.name, region_url(classroom.region.id) %>)
       </h3>
-        <% array_of_attachments_by_theme_id_and_classroom_id(@current_theme.id, classroom.id).each do |attachment| %>
-      <li>
-        <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
-        <h5><%= attachment.title %></h5>
-         <% end %>
-      </li>
+      <% array_of_attachments_by_theme_id_and_classroom_id(@current_theme.id, classroom.id).each do |attachment| %>
+        <% if attachment.format? == "image" %>
+          <li>
+            <%= link_to image_tag(attachment.image_url.to_s), attachment.image_url, rel: 'prettyPhoto' %>
+            <h5><%= attachment.title %></h5>
+          </li>
+        <% elsif attachment.format? == "youtube" %>
+          <li>
+            <%= link_to image_tag(attachment.thumbnail_url), attachment.youtube_url, rel: 'prettyPhoto' %>
+            <h5><%= attachment.title %></h5>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 <% end %>  
 </div>      
 
-
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+</script>
 
 
 

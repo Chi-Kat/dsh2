@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require jquery.masonry.min
+//= require jquery.prettyPhoto
+//= require_tree .

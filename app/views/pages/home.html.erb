@@ -17,26 +17,41 @@
   <%= link_to 'clear', root_url %>
 <% end %>
 </div>
-<div id="attachments">
+
+<script> 
+$(function(){
+  $('#attachmentsContainer').masonry({
+    // options
+    itemSelector : '.classroomPosts',
+    isFitWidth: true,
+    containerStyle: {margin: '0 auto'},
+    gutterWidth: 10
+  });
+});
+</script> 
+
+<div id="attachmentsContainer">
 <% @array_of_classrooms_by_theme_id.each do |classroom| %>
-  <ul class="classroomAttachmentsByTheme">
-    <h3>
-      <%= link_to classroom.name, classroom_url(classroom.id) %>
-    </h3>
-    <h3>
-      (<%= link_to classroom.region.name, region_url(classroom.region.id) %>)
-    </h3>
-      <% array_of_attachments_by_theme_id_and_classroom_id(@current_theme.id, classroom.id).each do |attachment| %>
-    <li>
-      <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
-      <h5><%= attachment.title %></h5>
-       <% end %>
-    </li>
-  </ul>
+  <div class="classroomPosts">
+    <ul>
+      <h3>
+        <%= link_to classroom.name, classroom_url(classroom.id) %>
+      </h3>
+      <h3>
+        (<%= link_to classroom.region.name, region_url(classroom.region.id) %>)
+      </h3>
+        <% array_of_attachments_by_theme_id_and_classroom_id(@current_theme.id, classroom.id).each do |attachment| %>
+      <li>
+        <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
+        <h5><%= attachment.title %></h5>
+         <% end %>
+      </li>
+    </ul>
+  </div>
 <% end %>  
 </div>      
 
- 
+
 
 
 

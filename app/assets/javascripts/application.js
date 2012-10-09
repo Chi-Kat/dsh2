@@ -13,5 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require jquery.wookmark.min
-//= require jquery.imagesloaded
+//= require jquery.masonry.min

@@ -26,11 +26,7 @@
 <ul><% @attachments.each do |attachment| %>
   <li>  
     <div id = "attachmentIndex">
-      <% if attachment.format? == "image" %>
-        <%= link_to image_tag attachment.image_url(:thumb).to_s, attachment_url(attachment.id) %>
-      <% elsif attachment.format? == "youtube" %>
         <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
-      <%end%>
       <br>
       <%= attachment.title %>
     </div>

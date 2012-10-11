@@ -23,19 +23,19 @@
     <p><%= f.label :type %> (Please type Admin or Facilitator)</p>
     <p><%= f.text_field :type %></p> 
   </div> -->
-  <div class="field">
-    <%= f.label "If this user is a Facilitatory, please choose a classroom for this user." %> <br>
+  <div class="field separator">
+    <%= f.label "If this user is a facilitator, please choose a classroom for this user." %> <br>
     <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
   </div>
-  <div>
+  <div class="separator">
     Upload a profile picture<br />
     <%= f.file_field :image %>
   </div>
-  <div class="field">
+  <div class="field separator">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
-  <div class="field">
+  <div class="field separator">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>

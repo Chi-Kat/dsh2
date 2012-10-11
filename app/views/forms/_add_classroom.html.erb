@@ -11,16 +11,9 @@
     </div>
   <% end %>
 
-  
-  <ul>
-    Current Classroms: 
-    <% @classrooms.each do |classroom| %>
-      <li><%= classroom.name %>, (<%=classroom.region.name%>)</li>
-    <% end %>
-  </ul>
-
-  <div class="field">
-    <%= f.label :region_id %><br />
+  <h6 class="separator">New Classrom:</h6>
+  <div class="field separator">
+    <%= f.label :region_id %>
     <%= f.collection_select :region_id, Region.all, :id, :name %>
   </div>
   <div class="field">
@@ -35,12 +28,12 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, :size => "30x10" %>
   </div>
-  <div>
-    Upload a map<br />
+  <div class="separator">
+    Upload a map:
     <%= f.file_field :map %>
   </div>
-  <div>
-    Upload a profile picture<br />
+  <div class="separator">
+    Upload a profile picture:
     <%= f.file_field :image %>
   </div>
   <div class="actions">

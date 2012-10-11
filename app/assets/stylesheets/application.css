@@ -295,7 +295,8 @@ about styles
 
 #about_content {
 	margin:auto;
-	width: 92%;	
+	width: 92%;
+	min-height: 660px;	
 }
 
 .AboutDSH {
@@ -334,7 +335,7 @@ h5 {
 .description p {
 	font: normal 14px Helvetica, sans-serif;	
 	text-align: left;	
-	margin: 10px;		
+	margin: 10px 20px;		
 }
 
 .gpLogo {

@@ -20,15 +20,15 @@
       </li>
 <!-- Link for facilitator/admin -->
 <% if logged_in? %>
-<% if current_user.type == "Admin" %>
-			<li>
-				<%= link_to "Update", admin_url(current_user.id) %>
-			</li>
-<% elsif current_user.type == "Facilitator"%>
-			<li>
-				<%= link_to "Post New", facilitator_url(current_user.id) %>
-			</li>
-<% end %>
+	<% if current_user.type == "Admin" %>
+				<li>
+					<%= link_to "Update", admin_url(current_user.id) %>
+				</li>
+	<% elsif current_user.type == "Facilitator"%>
+				<li>
+					<%= link_to "Post New", facilitator_url(current_user.id) %>
+				</li>
+	<% end %>
 <% end %> 
 <!-- Log in / Log out  -->
 <% if logged_in? %>

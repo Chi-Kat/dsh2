@@ -20,11 +20,11 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :classroom %><br />
+    <%= f.label :classroom, "Desired Classroom Name" %><br />
     <%= f.text_field :classroom %>
   </div>
   <div class="field">
-    <%= f.label :region_id %><br />
+    <%= f.label :region_id %>
     <%= f.collection_select :region_id, Region.all, :id, :name %>
   </div>
   <div class="field">
@@ -32,6 +32,6 @@
     <%= f.text_area :note, :size => "30x10", :placeholder => "i.e. indicate if your classroom resides in a different region" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Apply", :class => "submit_button" %>
   </div>
 <% end %>

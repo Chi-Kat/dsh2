@@ -16,6 +16,8 @@ class AdminsController < ApplicationController
   # GET /admins/1
   # GET /admins/1.json
   def show
+    @facilitator = Facilitator.new(params[:facilitator])
+    
     @admin = Admin.find(params[:id])
 
     @user = User.find_by_id(session[:user_id])

@@ -23,7 +23,7 @@ class FacilitatorsController < ApplicationController
       @attachment = Attachment.new
       @classroom = Classroom.find_by_id(@facilitator.classroom_id)
       @form_type = params[:form_type]
-      @region = Region.find(@classroom.region_id)
+      @region = Region.find_by_id(@classroom.region_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -52,18 +52,18 @@ class FacilitatorsController < ApplicationController
   def create
     @facilitator = Facilitator.new(params[:facilitator])
 
-    facilitator = params[:facilitator]
-    classroom = Classroom.new
-    classroom.name = facilitator["classroom"]
-    classroom.region_id = facilitator["region_id"]
-    classroom.save
+    # facilitator = params[:facilitator]
+    # classroom = Classroom.new
+    # classroom.name = facilitator["classroom"]
+    # classroom.region_id = facilitator["region_id"]
+    # classroom.save
 
-    @facilitator = Facilitator.new
-    @facilitator.name = facilitator["name"]
-    @facilitator.classroom_id = Classroom.find_by_name(facilitator["classroom"]).id
-    @facilitator.email = facilitator["email"]
-    @facilitator.password = "facilitator"
-    @facilitator.password_confirmation = "facilitator"
+    # @facilitator = Facilitator.new
+    # @facilitator.name = facilitator["name"]
+    # @facilitator.classroom_id = Classroom.find_by_name(facilitator["classroom"]).id
+    # @facilitator.email = facilitator["email"]
+    # @facilitator.password = "facilitator"
+    # @facilitator.password_confirmation = "facilitator"
 
     respond_to do |format|
       if @facilitator.save

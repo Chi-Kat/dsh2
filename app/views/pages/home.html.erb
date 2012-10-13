@@ -1,11 +1,11 @@
 <div class="theme_select">
 <% if @selected_theme.present?%>
-  <h5><%= @selected_theme.prompt %></h5>
+  <h5><%= @selected_theme.prompt %></h3>
 <% else %>
-  <h5>
+  <h3>
     Theme Of The Month: <%= @theme_of_the_month.name %>
-  </h5>
-  <h5><%= @theme_of_the_month.prompt %></h5>
+  </h3>
+  <h3><%= @theme_of_the_month.prompt %></h3>
 <% end %>
   <%= form_tag(root_url, :method => :get) do -%>
 <% if @selected_theme.present?%>
@@ -14,7 +14,6 @@
   <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "See Previous Themes"%>
 <% end %>
   <%= submit_tag 'Filter' %>
-  <%= link_to 'clear', root_url %>
 <% end %>
 </div>
 
@@ -34,12 +33,12 @@ $(function(){
 <% @array_of_classrooms_by_theme_id.each do |classroom| %>
   <div class="classroomPosts">
     <ul>
-      <h3>
+      <h4>
         <%= link_to classroom.name, classroom_url(classroom.id) %>
-      </h3>
-      <h3>
-        (<%= link_to classroom.region.name, region_url(classroom.region.id) %>)
-      </h3>
+      </h4>
+      <h4>
+        -<%= link_to classroom.region.name, region_url(classroom.region.id) %>-
+      </h4>
       <% array_of_attachments_by_theme_id_and_classroom_id(@current_theme.id, classroom.id).each do |attachment| %>
         <% if attachment.format? == "image" %>
           <li>
@@ -60,7 +59,9 @@ $(function(){
 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){
-    $("a[rel^='prettyPhoto']").prettyPhoto();
+    $("a[rel^='prettyPhoto']").prettyPhoto({
+      show_title: true
+    });
   });
 </script>
 

@@ -1,47 +1,52 @@
 <p id="notice"><%= notice %></p>
-<%= form_tag(root_url, :method => :get) do -%>
-  <% if @theme_id.present?%>
-    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
-  <% else %>
-    <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "Select Theme"%>
+<div class="filterPosts">
+  <h1>Conversation Board</h1>
+  <%= form_tag(root_url, :method => :get) do -%>
+    <% if @theme_id.present?%>
+      <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name,@theme_id)%>
+    <% else %>
+      <%= select_tag :theme_id, options_from_collection_for_select(Theme.order("name"), :id, :name), :prompt => "Select Theme"%>
+    <% end %>
+
+    <% if @classroom_id.present?%>
+      <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name,@classroom_id)%>
+    <% else %>
+      <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name), :prompt => "Select Classroom"%>
+    <% end %>
+
+    <% if @region_id.present?%>
+      <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name,@region_id)%>
+    <% else %>
+      <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name), :prompt => "Select Region"%>
+    <% end %>
+    <%= submit_tag 'Filter' %>
   <% end %>
+</div>
 
-  <% if @classroom_id.present?%>
-    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name,@classroom_id)%>
-  <% else %>
-    <%= select_tag :classroom_id, options_from_collection_for_select(Classroom.order("name"), :id, :name), :prompt => "Select Classroom"%>
-  <% end %>
-
-  <% if @region_id.present?%>
-    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name,@region_id)%>
-  <% else %>
-    <%= select_tag :region_id, options_from_collection_for_select(Region.order("name"), :id, :name), :prompt => "Select Region"%>
-  <% end %>
-  <%= submit_tag 'Filter' %>
-  <%= link_to 'clear', root_url %>
-<% end %>
-
-<h1>Showing All Digital Schoolhouse Posts</h1>
-
-<ul><% @attachments.each do |attachment| %>
-  <li>  
-    <div id = "attachmentIndex">
-        <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
-      <br>
-      <%= attachment.title %>
+<div class="centerContainer">
+  <% @attachments.each do |attachment| %>
+    <div class="blockDisplay">
+      <ul>   
+        <li>  
+          <div>
+              <%= link_to image_tag(attachment.thumbnail_url), attachment_url(attachment.id) %>
+            <br>
+            <%= attachment.title %>
+          </div>
+          <div class = "attachmentOptions">
+            <%= link_to 'Show', attachment %> |
+            <% if current_user.present? && current_user.facilitator?%>
+              <%if attachment.user_id = session["user_id"] %>
+                <%= link_to 'Delete', attachment, method: :delete, data: { confirm: 'Are you sure?'}%> |
+                <%= link_to 'Edit', edit_attachment_path(@attachment) %>
+              <%end%>
+            <%end%>
+            <%if current_user.present? && current_user.admin? %>
+              <%= link_to 'Delete', attachment, method: :delete, data: { confirm: 'Are you sure?'}%> |
+              <%= link_to 'Edit', edit_attachment_path(attachment) %>
+            <%end%>
+        </li>
+      </ul>
     </div>
-    <div class = "attachmentOptions">
-      <%= link_to 'Show', attachment %> |
-      <% if current_user.present? && current_user.facilitator?%>
-        <%if attachment.user_id = session["user_id"] %>
-          <%= link_to 'Delete', attachment, method: :delete, data: { confirm: 'Are you sure?'}%> |
-          <%= link_to 'Edit', edit_attachment_path(@attachment) %>
-        <%end%>
-      <%end%>
-      <%if current_user.present? && current_user.admin? %>
-        <%= link_to 'Delete', attachment, method: :delete, data: { confirm: 'Are you sure?'}%> |
-        <%= link_to 'Edit', edit_attachment_path(attachment) %>
-      <%end%>
-  </li>
-<% end %>
-</ul>
+  <% end %>
+</div>

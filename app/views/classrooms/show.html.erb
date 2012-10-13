@@ -32,7 +32,7 @@
 <div id="theme">
   <div id = "attachments">
     <ul class = "classroomAttachmentsByTheme"><!--MEDIA PLACEHOLDER-->
-        <h3><%=theme.name%></h3>
+        <h5><%=theme.name%></h5>
 <% @classroom.attachments.each do |attachment| %>
 <% if attachment.theme_id == theme.id%>
         <li> 
@@ -47,8 +47,6 @@
   </div>
 </div>
 <%end%>
-
-
 
 <div class="linkbox">
 <%= link_to 'All Classrooms', classrooms_path %>

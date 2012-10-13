@@ -254,7 +254,7 @@ Home Page Attachments styling
 	background-color: #DDA0DD;
 }
 		
-#attachments ul li, #attachmentsContainer ul li {
+#attachments ul li, .classroomPosts ul li {
 	padding: 12px 12px;
 	margin: 10px;
 	list-style: none;
@@ -320,9 +320,23 @@ about styles
 	margin: 0px;
 }
 
+/*
+header styles
+*/
+
 h1 {
 	font: bold 20px Helvetica, sans-serif;	
 	color: #666;
+}
+
+h3 {
+	font: bold 20px Helvetica, sans-serif;	
+	color: #25729A;
+	margin-bottom: 10px;
+}
+
+h4 a {
+	text-decoration: none;
 }
 
 h5 {
@@ -407,6 +421,12 @@ table {
 	width: 100%;
 }
 
+#theme_id, #classroom_id, #region_id {
+	width: 180px;
+	margin: 10px 0px 20px 0px;
+	font-size: 16px;
+}
+
 /*
 Region table styles
 */
@@ -433,4 +453,5 @@ Masonry styles
 	width: 286px;
 	float: left;
 }
+
 

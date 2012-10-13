@@ -8,11 +8,11 @@
 	<% end %>
 		<%= form_tag(admin_url, :method => :get) do -%>
 		<%= hidden_field_tag :form_type, "add_user" %>
-		<%= submit_tag 'Add User', :class => 'submit_button' %>
+		<%= submit_tag 'Add Facilitator', :class => 'submit_button' %>
 	<% end %>
 		<%= form_tag(admin_url, :method => :get) do -%>
 		<%= hidden_field_tag :form_type, "add_theme" %>
-		<%= submit_tag 'Create Theme Challenge', :class => 'submit_button' %>
+		<%= submit_tag 'Create Theme', :class => 'submit_button' %>
 	<% end %>
 		<%= form_tag(admin_url, :method => :get) do -%>
 		<%= hidden_field_tag :form_type, "add_attachment" %>

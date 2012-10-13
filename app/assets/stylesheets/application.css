@@ -385,7 +385,7 @@ applicants styles: applicants css file not present in assets folder, inserting s
 #applicantcontainer .field {
 	width: 310px;
 	float: left;
-	padding: 0px 0px 16px 0px;
+	padding: 0px 0px 0px 0px;
 }
 
 .centerh1 {

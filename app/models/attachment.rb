@@ -63,7 +63,7 @@ class Attachment < ActiveRecord::Base
 
   def thumbnail_url
     if self.format? == "image"
-      return attachment.image_url(:thumb).to_s
+      return self.image_url(:thumb).to_s
     elsif self.format? == "youtube"
       return youtube_thumbnail(self.youtube_url).to_s
     else        

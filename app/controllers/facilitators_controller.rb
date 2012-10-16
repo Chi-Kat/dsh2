@@ -52,18 +52,19 @@ class FacilitatorsController < ApplicationController
   def create
     @facilitator = Facilitator.new(params[:facilitator])
 
-    facilitator = params[:facilitator]
-    classroom = Classroom.new
-    classroom.name = facilitator["classroom"]
-    classroom.region_id = facilitator["region_id"]
-    classroom.save
+    # Creates a facilitator and classroom automatically
+    # facilitator = params[:facilitator]
+    # classroom = Classroom.new
+    # classroom.name = facilitator["classroom"]
+    # classroom.region_id = facilitator["region_id"]
+    # classroom.save
 
-    @facilitator = Facilitator.new
-    @facilitator.name = facilitator["name"]
-    @facilitator.classroom_id = Classroom.find_by_name(facilitator["classroom"]).id
-    @facilitator.email = facilitator["email"]
-    @facilitator.password = "facilitator"
-    @facilitator.password_confirmation = "facilitator"
+    # @facilitator = Facilitator.new
+    # @facilitator.name = facilitator["name"]
+    # @facilitator.classroom_id = Classroom.find_by_name(facilitator["classroom"]).id
+    # @facilitator.email = facilitator["email"]
+    # @facilitator.password = "facilitator"
+    # @facilitator.password_confirmation = "facilitator"
 
     respond_to do |format|
       if @facilitator.save

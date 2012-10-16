@@ -29,6 +29,7 @@ class AdminsController < ApplicationController
     @regions = Region.all
     @form_type = params[:form_type]
     @applicants = Applicant.all
+    @facilitator = Facilitator.new
 
 
     respond_to do |format|

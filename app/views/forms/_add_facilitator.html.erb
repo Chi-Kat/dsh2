@@ -20,7 +20,7 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
-   <div class="field">
+  <div class="field separator">
     <%= f.label "Classroom" %> <br>
     <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
   </div>

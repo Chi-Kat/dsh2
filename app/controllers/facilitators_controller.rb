@@ -67,7 +67,7 @@ class FacilitatorsController < ApplicationController
 
     respond_to do |format|
       if @facilitator.save
-        format.html { redirect_to @facilitator, notice: 'Facilitator was successfully created.' }
+        format.html { redirect_to facilitators_url, notice: 'Facilitator was successfully created.' }
         format.json { render json: @facilitator, status: :created, location: @facilitator }
       else
         format.html { render action: "new" }
